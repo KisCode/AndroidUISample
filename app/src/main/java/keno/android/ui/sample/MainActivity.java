@@ -9,6 +9,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button btnRelativePosition;
     private Button btnMarginGone;
+    private Button btnCenterAndBias;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnRelativePosition.setOnClickListener(this);
         btnMarginGone.setOnClickListener(this);
+        btnCenterAndBias = (Button) findViewById(R.id.btn_center_and_bias);
+        btnCenterAndBias.setOnClickListener(this);
     }
 
     @Override
@@ -33,6 +36,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_margin_gone:
                 MarginGoneActivity.start(this);
+                break;
+            case R.id.btn_center_and_bias:
+                CenterAndBiasActivity.start(this);
                 break;
         }
     }

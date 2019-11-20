@@ -19,4 +19,16 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_relative_position"
         style="@style/style_button_main" />
+    <Button
+        android:id="@+id/btn_center_and_bias"
+        android:text="center and bias"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_margin_gone"
+        style="@style/style_button_main" />
+    <Button
+        android:id="@+id/btn_percent"
+        android:text="Percent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_center_and_bias"
+        style="@style/style_button_main" />
 </android.support.constraint.ConstraintLayout>
