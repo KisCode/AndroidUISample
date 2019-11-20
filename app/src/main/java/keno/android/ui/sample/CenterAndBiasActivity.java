@@ -1,5 +1,7 @@
 package keno.android.ui.sample;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -10,4 +12,9 @@ public class CenterAndBiasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_center_and_bias);
     }
+    public static void start(Context context) {
+        Intent starter = new Intent(context, CenterAndBiasActivity.class);
+        context.startActivity(starter);
+    }
+
 }
