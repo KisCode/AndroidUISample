@@ -47,6 +47,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Visble"
+        android:layout_marginStart="40dp"
+        app:layout_goneMarginStart="0dp"
         app:layout_constraintStart_toEndOf="@+id/btn_gone"
         app:layout_constraintTop_toBottomOf="@id/iv_avatar" />
 </android.support.constraint.ConstraintLayout>
