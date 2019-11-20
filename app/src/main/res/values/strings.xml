@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AndroidUISample</string>
+    <string name="tips_info">Android UI Sample Summary.</string>
 </resources>
