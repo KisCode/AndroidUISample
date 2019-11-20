@@ -5,6 +5,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+/**
+* Description:  Relaytive Layout
+* Author: KisCode
+* Date : 2019/11/20 16:02
+**/
 public class RelaytivePositionActivity extends AppCompatActivity {
 
     @Override

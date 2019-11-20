@@ -6,4 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".MarginGoneActivity">
 
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="James LeBron James"
+        app:layout_constraintLeft_toRightOf="@id/iv_avatar"
+        app:layout_constraintTop_toTopOf="@id/iv_avatar" />
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="james101@gmail.com"
+        app:layout_constraintLeft_toLeftOf="@id/tv_username"
+        app:layout_constraintTop_toBottomOf="@id/tv_username"
+        app:layout_goneMarginTop="18dp" />
+
+    <Button
+        android:id="@+id/btn_gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_avatar" />
+
+    <Button
+        android:id="@+id/btn_visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Visble"
+        app:layout_constraintStart_toEndOf="@+id/btn_gone"
+        app:layout_constraintTop_toBottomOf="@id/iv_avatar" />
 </android.support.constraint.ConstraintLayout>
