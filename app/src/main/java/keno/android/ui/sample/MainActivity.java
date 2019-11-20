@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_relative_position:
+                //Start
                 RelaytivePositionActivity.start(this);
                 break;
             case R.id.btn_margin_gone:
