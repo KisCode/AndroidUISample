@@ -9,9 +9,12 @@
     </style>
 
     <!--声明RadioButton的样式-->
-    <style name="style_radio_button" parent="Widget.AppCompat.CompoundButton.RadioButton">
-        <item name="android:colorControlActivated">@color/colorCheck</item>
-        <item name="android:colorControlNormal">@color/colorNormal</item>
-    </style>
+<style name="style_radio_button" parent="Widget.AppCompat.CompoundButton.RadioButton">
+    <!--选中样式-->
+    <item name="android:colorControlActivated">@color/colorCheck</item>
+
+    <!--为选中样式-->
+    <item name="android:colorControlNormal">@color/colorNormal</item>
+</style>
 
 </resources>
