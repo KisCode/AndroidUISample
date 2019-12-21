@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
 /**
  *
 设置 GONE属性后，控件就不会出现在布局中了，B控件对A控件的margin属性也就没有作用了。
