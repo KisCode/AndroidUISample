@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginDemoActivity">
+
+    <View
+        android:id="@+id/view_username"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="24dp"
+        android:background="@drawable/shape_stroke_edit"
+        app:layout_constraintTop_toBottomOf="@id/iv_banner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_weight="1"
+        android:padding="8dp"
+        android:hint="请输入"
+        app:layout_constraintLeft_toRightOf="@id/iv_user"
+        app:layout_constraintRight_toRightOf="@id/view_username"
+        app:layout_constraintBottom_toBottomOf="@id/view_username"
+        android:background="@null"
+        app:layout_constraintTop_toTopOf="@id/view_username"/>
+
+
+    <ImageView
+        android:id="@+id/iv_user"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:src="@mipmap/icon_user"
+        android:tint="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@id/view_username"
+        app:layout_constraintLeft_toLeftOf="@id/view_username"
+        app:layout_constraintTop_toTopOf="@id/view_username" />
+
+    <ImageView
+        android:id="@+id/iv_banner"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="12dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>
