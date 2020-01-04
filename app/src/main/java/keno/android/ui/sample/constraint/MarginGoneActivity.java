@@ -1,4 +1,4 @@
-package keno.android.ui.sample;
+package keno.android.ui.sample.constraint;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import keno.android.ui.sample.R;
 
 
 /**

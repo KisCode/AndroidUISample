@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PercentActivity">
+    tools:context=".constraint.PercentActivity">
 
     <!--设置 控件宽度为屏幕宽度的0.5倍-->
     <TextView
@@ -28,7 +28,6 @@
         android:text="50% height"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
-
 
     <TextView
         android:layout_width="wrap_content"

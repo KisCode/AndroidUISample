@@ -1,7 +1,9 @@
-package keno.android.ui.sample;
+package keno.android.ui.sample.constraint;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import keno.android.ui.sample.R;
 
 /***
  * 3个TextView相互约束，两端两个TextView分别与parent约束，成为一条链，效果如下：

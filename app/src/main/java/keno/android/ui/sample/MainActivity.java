@@ -5,12 +5,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import keno.android.ui.sample.constraint.CenterAndBiasActivity;
+import keno.android.ui.sample.constraint.MarginGoneActivity;
+import keno.android.ui.sample.constraint.PercentActivity;
+import keno.android.ui.sample.constraint.RelaytivePositionActivity;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnRelativePosition;
     private Button btnMarginGone;
     private Button btnCenterAndBias;
+    private Button btnPercent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnMarginGone.setOnClickListener(this);
         btnCenterAndBias = (Button) findViewById(R.id.btn_center_and_bias);
         btnCenterAndBias.setOnClickListener(this);
+        btnPercent = (Button) findViewById(R.id.btn_percent);
+        btnPercent.setOnClickListener(this);
     }
 
     @Override
@@ -40,6 +48,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_center_and_bias:
                 CenterAndBiasActivity.start(this);
+                break;
+            case R.id.btn_percent:
+                PercentActivity.start(this);
                 break;
         }
     }

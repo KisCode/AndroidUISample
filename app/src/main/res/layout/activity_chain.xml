@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChainActivity">
+    tools:context=".constraint.ChainActivity">
 <!--    * 一条链的第一个控件是这条链的链头，我们可以在链头中设置 layout_constraintHorizontal_chainStyle来改变整条链的样式。chains提供了3种样式，分别是：
  * CHAIN_SPREAD —— 展开元素 (默认)；
  * CHAIN_SPREAD_INSIDE —— 展开元素，但链的两端贴近parent；
