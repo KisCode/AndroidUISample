@@ -1,7 +1,8 @@
 package keno.android.ui.sample;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -11,6 +12,9 @@ import android.widget.Toast;
 public class LoginDemoActivity extends AppCompatActivity {
     private static final String DEAFULT_NAME = "android";
     private static final String DEAFULT_PASSWOR = "1234";
+    public static final String SP_NAME = "sp_user";
+    public static final String SP_KEY_USERNAME = "userName";
+    public static final String SP_KEY_PASSWORD = "password";
 
 
     private EditText etName;
@@ -23,6 +27,19 @@ public class LoginDemoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login_demo);
 
         initViews();
+        initData();
+
+    }
+
+    private void initData() {
+        //1.初始化 SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences(SP_NAME, MODE_PRIVATE);
+        //2. 获取sharedPreferences存储变量
+        String userName = sharedPreferences.getString(SP_KEY_USERNAME, "");
+        String pwd = sharedPreferences.getString(SP_KEY_PASSWORD, "");
+
+        etName.setText(userName);
+        etPwd.setText(pwd);
     }
 
     private void initViews() {
@@ -43,10 +60,23 @@ public class LoginDemoActivity extends AppCompatActivity {
 
                 if (DEAFULT_NAME.equals(name) && DEAFULT_PASSWOR.equals(pwd)) {
                     Toast.makeText(LoginDemoActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                    saveUserToSp(name, pwd);
                 } else {
                     Toast.makeText(LoginDemoActivity.this, "Failure", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+    }
+
+    private void saveUserToSp(String username, String pwd) {
+        //1. 创建SharedPreferences对象，参数1 为sp文件名， 参数2为 私有模式只能本应用程序读、写
+        SharedPreferences sp = getSharedPreferences(SP_NAME, MODE_PRIVATE);
+        //2. 实例化一个Editor对象 用于对数据进行存储
+        SharedPreferences.Editor editor = sp.edit();
+        //3. 存储
+        editor.putString(SP_KEY_USERNAME, username);
+        editor.putString(SP_KEY_PASSWORD, pwd);
+        //4. 提交
+        editor.commit();
     }
 }
