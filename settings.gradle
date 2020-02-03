@@ -1,1 +1,1 @@
-include ':app', ':radionbuttonsample'
+include ':app', ':radionbuttonsample', ':dialogfragmentsample', ':dialogfragmentsample', ':dialogfragmentdemosample'
