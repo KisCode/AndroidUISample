@@ -28,7 +28,6 @@ public class LoginDemoActivity extends AppCompatActivity {
 
         initViews();
         initData();
-
     }
 
     private void initData() {

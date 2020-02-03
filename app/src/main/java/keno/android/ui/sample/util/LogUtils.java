@@ -50,7 +50,6 @@ public class LogUtils {
         }
     }
 
-
     public static void e(String msg) {
         e(TAG, msg);
     }
