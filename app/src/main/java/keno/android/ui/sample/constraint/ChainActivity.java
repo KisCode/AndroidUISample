@@ -1,7 +1,7 @@
 package keno.android.ui.sample.constraint;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import keno.android.ui.sample.R;
 
