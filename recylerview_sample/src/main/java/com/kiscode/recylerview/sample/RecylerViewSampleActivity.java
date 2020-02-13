@@ -91,7 +91,10 @@ public class RecylerViewSampleActivity extends AppCompatActivity {
         recyclerView.setAdapter(mAdapter);
 
         //3. 设置分割线 DividerItemDecoration为系统自带分割线
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        DividerItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+        //设置分割线drawable，可自定义样式
+        itemDecoration.setDrawable(getDrawable(R.drawable.shape_divider));
+        recyclerView.addItemDecoration(itemDecoration);
 
         //4. 设置动画
         recyclerView.setItemAnimator(new DefaultItemAnimator());
