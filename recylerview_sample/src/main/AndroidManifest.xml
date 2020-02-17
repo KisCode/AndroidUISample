@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MutipleTypeViewRecyclerActivity"></activity>
+        <activity android:name=".CommanMutipleAdapterDemoActivity"></activity>
+        <activity android:name=".CommanAapterDemoActivity" />
+        <activity android:name=".MutipleTypeViewRecyclerActivity" />
         <activity android:name=".GridLayoutActivity" />
         <activity android:name=".HomeRecylerViewActivity">
             <intent-filter>

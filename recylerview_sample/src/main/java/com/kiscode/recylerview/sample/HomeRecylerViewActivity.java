@@ -23,7 +23,7 @@ import java.util.List;
 
 public class HomeRecylerViewActivity extends AppCompatActivity {
 
-    private String[] menuOptions = {"Simple Demo", "GridLayoutManager", "MutipleTypeViewRecyclerActivity"};
+    private String[] menuOptions = {"Simple Demo", "GridLayoutManager", "MutipleTypeViewRecyclerActivity", "CommanAapterDemoActivity", "CommanMutipleAdapterDemoActivity"};
 
     private RecyclerView recyclerView;
 
@@ -62,6 +62,14 @@ public class HomeRecylerViewActivity extends AppCompatActivity {
                     case 2:
                         // RecylerView基本用法demo
                         startActivity(new Intent(HomeRecylerViewActivity.this, MutipleTypeViewRecyclerActivity.class));
+                        break;
+                    case 3:
+                        // CommanAapter 用法demo
+                        startActivity(new Intent(HomeRecylerViewActivity.this, CommanAapterDemoActivity.class));
+                        break;
+                    case 4:
+                        // CommanAapter 用法demo
+                        startActivity(new Intent(HomeRecylerViewActivity.this, CommanMutipleAdapterDemoActivity.class));
                         break;
                 }
             }

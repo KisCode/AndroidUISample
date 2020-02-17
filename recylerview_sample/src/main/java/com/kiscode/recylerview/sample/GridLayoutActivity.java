@@ -2,12 +2,15 @@ package com.kiscode.recylerview.sample;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kiscode.recylerview.sample.adapter.GridAdapter;
+import com.kiscode.recylerview.sample.comman.CommanAdapter;
+import com.kiscode.recylerview.sample.comman.CommanViewHolder;
 import com.kiscode.recylerview.sample.decoration.GridDividerItemDecoration;
 
 import java.util.ArrayList;
@@ -48,6 +51,7 @@ public class GridLayoutActivity extends AppCompatActivity {
         });
         recylerViewGrid.setLayoutManager(gridLayoutManager);
         recylerViewGrid.setAdapter(new GridAdapter(this, mDatas));
+
     }
 
     private void initDatas() {
