@@ -1,5 +1,3 @@
-# RadionButton Sample
-
 # SpannableString 的基本用法
 
 ```java
