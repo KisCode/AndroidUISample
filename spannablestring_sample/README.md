@@ -1,83 +1,8 @@
-package com.keno.spannablestring_sample;
+# RadionButton Sample
 
-import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
-import android.os.Bundle;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.TextPaint;
-import android.text.method.LinkMovementMethod;
-import android.text.style.BackgroundColorSpan;
-import android.text.style.ClickableSpan;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.ImageSpan;
-import android.text.style.RelativeSizeSpan;
-import android.text.style.StrikethroughSpan;
-import android.text.style.StyleSpan;
-import android.text.style.SubscriptSpan;
-import android.text.style.SuperscriptSpan;
-import android.text.style.URLSpan;
-import android.text.style.UnderlineSpan;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
+# SpannableString 的基本用法
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
-/**
- * Description: SpannableString 的基本用法
- * Author: keno
- * CreateDate: 2020/5/20 20:23
- */
-public class SpannableStringMainActivity extends AppCompatActivity {
-    private static final String FOREGROUND_STRING = "Hello world, SpannableString is ";
-    private TextView tvForeground;
-    private TextView tvBackground;
-    private TextView tvRelativeSize;
-    private TextView tvStrikethroughSpan;
-    private TextView tvUnderlineSpan;
-    private TextView tvSuperscriptSpan;
-    private TextView tvSubscriptSpan;
-    private TextView tvStyleSpan;
-    private TextView tvImageSpan;
-    private TextView tvClickableSpan;
-    private TextView tvURLSpan;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_spannable_string_main);
-        initView();
-        initForegroundColorSpan();
-        initBackroundColorSpan();
-        initRelativeSizeSpan();
-        initStrikethroughSpan();
-        initUnderlineSpan();
-        initSuperscriptSpan();
-        initSubscriptSpan();
-        initStyleSpan();
-        initImageSpan();
-        initClickableSpan();
-        initURLSpan();
-    }
-
-    private void initView() {
-        tvForeground = findViewById(R.id.tv_foreground);
-        tvBackground = findViewById(R.id.tv_background);
-        tvRelativeSize = findViewById(R.id.tv_RelativeSize);
-        tvStrikethroughSpan = findViewById(R.id.tv_StrikethroughSpan);
-        tvUnderlineSpan = findViewById(R.id.tv_UnderlineSpan);
-        tvSuperscriptSpan = findViewById(R.id.tv_SuperscriptSpan);
-        tvSubscriptSpan = findViewById(R.id.tv_SubscriptSpan);
-        tvStyleSpan = findViewById(R.id.tv_StyleSpan);
-        tvImageSpan = findViewById(R.id.tv_ImageSpan);
-        tvClickableSpan = findViewById(R.id.tv_ClickableSpan);
-        tvURLSpan = findViewById(R.id.tv_URLSpan);
-    }
-
-
+```java
     /***
      * 为文本设置字体颜色
      */
@@ -230,6 +155,4 @@ public class SpannableStringMainActivity extends AppCompatActivity {
         tvURLSpan.setHighlightColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
         tvURLSpan.setText(spannableString);
     }
-
-
-}
+```
