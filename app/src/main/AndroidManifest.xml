@@ -10,17 +10,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChainActivity"></activity>
-        <activity android:name=".PercentActivity" />
-        <activity android:name=".CenterAndBiasActivity" />
-        <activity android:name=".MarginGoneActivity" />
-        <activity android:name=".RelaytivePositionActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".LoginDemoActivity"></activity>
+        <activity android:name=".constraint.GuidLineActivity" />
+        <activity android:name=".constraint.ChainActivity" />
+        <activity android:name=".constraint.PercentActivity" />
+        <activity android:name=".constraint.CenterAndBiasActivity" />
+        <activity android:name=".constraint.MarginGoneActivity" />
+        <activity android:name=".constraint.RelaytivePositionActivity" />
+        <activity android:name=".ConstraintLayoutDemoActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
     </application>
 

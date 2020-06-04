@@ -1,33 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-    <Button
-        android:id="@+id/btn_relative_position"
-        android:text="@string/btn_relative_positioning"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        style="@style/style_button_main" />
+    android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btn_margin_gone"
-        android:text="@string/btn_margin"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_relative_position"
-        style="@style/style_button_main" />
-    <Button
-        android:id="@+id/btn_center_and_bias"
-        android:text="center and bias"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_margin_gone"
-        style="@style/style_button_main" />
-    <Button
-        android:id="@+id/btn_percent"
-        android:text="Percent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_center_and_bias"
-        style="@style/style_button_main" />
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MainActivity" />
+
+        <Button
+            android:id="@+id/btn_constraintlayout_demo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ConstraintLayoutDemoActivity"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_login_demo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LoginDemoActivity"
+            android:textAllCaps="false" />
+    </LinearLayout>
+</ScrollView>

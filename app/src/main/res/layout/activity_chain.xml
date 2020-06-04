@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChainActivity">
+    tools:context=".constraint.ChainActivity">
 <!--    * 一条链的第一个控件是这条链的链头，我们可以在链头中设置 layout_constraintHorizontal_chainStyle来改变整条链的样式。chains提供了3种样式，分别是：
  * CHAIN_SPREAD —— 展开元素 (默认)；
  * CHAIN_SPREAD_INSIDE —— 展开元素，但链的两端贴近parent；
@@ -76,4 +76,4 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/tv5_chain"
         app:layout_constraintLeft_toRightOf="@+id/tv5_chain"
         app:layout_constraintRight_toRightOf="parent"/>
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,16 +1,20 @@
 package keno.android.ui.sample;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-
+/**
+ * Description:
+ * Author: keno
+ * CreateDate: 2020/2/3 10:21
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btnRelativePosition;
-    private Button btnMarginGone;
-    private Button btnCenterAndBias;
+    private Button btnConstraintlayoutDemo;
+    private Button btnLoginDemo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,26 +24,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView() {
-        btnRelativePosition = findViewById(R.id.btn_relative_position);
-        btnMarginGone = findViewById(R.id.btn_margin_gone);
+        btnConstraintlayoutDemo = (Button) findViewById(R.id.btn_constraintlayout_demo);
+        btnLoginDemo = (Button) findViewById(R.id.btn_login_demo);
 
-        btnRelativePosition.setOnClickListener(this);
-        btnMarginGone.setOnClickListener(this);
-        btnCenterAndBias = (Button) findViewById(R.id.btn_center_and_bias);
-        btnCenterAndBias.setOnClickListener(this);
+        btnConstraintlayoutDemo.setOnClickListener(this);
+        btnLoginDemo.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btn_relative_position:
-                RelaytivePositionActivity.start(this);
+            case R.id.btn_constraintlayout_demo:
+                startActivity(new Intent(this, ConstraintLayoutDemoActivity.class));
                 break;
-            case R.id.btn_margin_gone:
-                MarginGoneActivity.start(this);
-                break;
-            case R.id.btn_center_and_bias:
-                CenterAndBiasActivity.start(this);
+            case R.id.btn_login_demo:
+                startActivity(new Intent(this, LoginDemoActivity.class));
                 break;
         }
     }
