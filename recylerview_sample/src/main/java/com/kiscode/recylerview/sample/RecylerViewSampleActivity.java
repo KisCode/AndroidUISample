@@ -19,6 +19,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.kiscode.recylerview.sample.decoration.StickDecoration;
+import com.kiscode.recylerview.sample.decoration.StickyItemDecoration;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -78,7 +81,7 @@ public class RecylerViewSampleActivity extends AppCompatActivity {
 //        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         //设置布局管理器 GridLayoutManager网格布局管理
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
 
         //设置布局管理器 GridLayoutManager网格布局管理
         //纵向 3列
@@ -90,10 +93,12 @@ public class RecylerViewSampleActivity extends AppCompatActivity {
         mAdapter = new HomeAdapter();
         recyclerView.setAdapter(mAdapter);
 
-        //3. 设置分割线 DividerItemDecoration为系统自带分割线
+      /*  //3. 设置分割线 DividerItemDecoration为系统自带分割线
         DividerItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         //设置分割线drawable，可自定义样式
-        itemDecoration.setDrawable(getDrawable(R.drawable.shape_divider));
+        itemDecoration.setDrawable(getDrawable(R.drawable.shape_divider));*/
+
+        StickDecoration itemDecoration = new StickDecoration();
         recyclerView.addItemDecoration(itemDecoration);
 
         //4. 设置动画
@@ -114,6 +119,9 @@ public class RecylerViewSampleActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
+//            if (position % 5 == 0) {
+//                holder.itemView.setTag(true);
+//            }
             holder.tvText.setText(mDatas.get(position));
             holder.tvText.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -144,6 +152,7 @@ public class RecylerViewSampleActivity extends AppCompatActivity {
             public MyViewHolder(@NonNull View itemView) {
                 super(itemView);
                 tvText = itemView.findViewById(R.id.tv_text_item);
+                itemView.setTag(false);
             }
         }
     }
