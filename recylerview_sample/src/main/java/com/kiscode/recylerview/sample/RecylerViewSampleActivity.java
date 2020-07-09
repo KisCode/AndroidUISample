@@ -119,9 +119,9 @@ public class RecylerViewSampleActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
-//            if (position % 5 == 0) {
-//                holder.itemView.setTag(true);
-//            }
+            if (position % 5 == 0) {
+                holder.itemView.setTag(true);
+            }
             holder.tvText.setText(mDatas.get(position));
             holder.tvText.setOnClickListener(new View.OnClickListener() {
                 @Override

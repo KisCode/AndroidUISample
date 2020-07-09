@@ -4,7 +4,6 @@ package com.kiscode.recylerview.sample.decoration;
 import android.graphics.Canvas;
 import android.util.Log;
 import android.view.View;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -34,7 +33,17 @@ public class StickDecoration extends RecyclerView.ItemDecoration {
         super.onDraw(c, parent, state);
         LinearLayoutManager linearLayoutManager = (LinearLayoutManager) parent.getLayoutManager();
         int firstVisibleItemPos = linearLayoutManager.findFirstVisibleItemPosition();
-        Log.i(TAG, "firstVisibleItemPos:" + firstVisibleItemPos);
+        int childCount = parent.getChildCount();
+        Log.e(TAG, "firstVisibleItemPos:" + firstVisibleItemPos + ",childCount:" + childCount);
 
+        //遍历查找 吸附的view
+        for (int i = 0; i < childCount; i++) {
+            View childView = parent.getChildAt(i);
+            if (childView.getTag() != null) {
+                Log.i(TAG, "childCount:" + i + ",getTag:" + childView.getTag());
+
+
+            }
+        }
     }
 }

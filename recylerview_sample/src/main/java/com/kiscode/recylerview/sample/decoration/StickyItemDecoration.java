@@ -98,6 +98,7 @@ public class StickyItemDecoration extends RecyclerView.ItemDecoration {
         clearStickyPositionList();
 
         for (int m = 0, size = parent.getChildCount(); m < size; m++) {
+            // RecyclerView.getChildCount() 获取到当前区域内显示的子控件
             View view = parent.getChildAt(m);
 
             /**
@@ -106,11 +107,12 @@ public class StickyItemDecoration extends RecyclerView.ItemDecoration {
             if (mStickyView.isStickyView(view)) {
                 mCurrentUIFindStickView = true;
                 getStickyViewHolder(parent);
-                cacheStickyViewPosition(m);
+                cacheStickyViewPosition(m); //
 
                 if (view.getTop() <= 0) {
                     bindDataForStickyView(mLayoutManager.findFirstVisibleItemPosition(), parent.getMeasuredWidth());
                 } else {
+                    // 多个吸附view
                     if (mStickyPositionList.size() > 0) {
                         if (mStickyPositionList.size() == 1) {
                             bindDataForStickyView(mStickyPositionList.get(0), parent.getMeasuredWidth());
@@ -122,7 +124,9 @@ public class StickyItemDecoration extends RecyclerView.ItemDecoration {
                     }
                 }
 
+                //计算吸附的View距离顶部的高度
                 if (view.getTop() > 0 && view.getTop() <= mStickyItemViewHeight) {
+                    //即将到顶吸附
                     mStickyItemViewMarginTop = mStickyItemViewHeight - view.getTop();
                 } else {
                     mStickyItemViewMarginTop = 0;
@@ -206,6 +210,7 @@ public class StickyItemDecoration extends RecyclerView.ItemDecoration {
      * @return
      */
     private int getStickyViewPositionOfRecyclerView(int m) {
+        //当前 屏幕内第一个可见的postion + 屏幕内可见childView集合中吸附view的下标
         return mLayoutManager.findFirstVisibleItemPosition() + m;
     }
 

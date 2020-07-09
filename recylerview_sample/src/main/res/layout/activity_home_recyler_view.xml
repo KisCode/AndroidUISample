@@ -5,8 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeRecylerViewActivity">
+
+    <com.dinuscxj.progressbar.CircleProgressBar
+        android:id="@+id/progress_circular"
+        app:drawBackgroundOutsideProgress="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        app:progress_background_color="@color/colorAccent"
+        app:progress_blur_radius="5dp"
+        app:progress_blur_style="solid"
+        app:progress_end_color="@color/colorItemBg"
+        app:progress_start_color="@color/colorPrimary"
+        app:progress_stroke_width="3dp"
+        app:progress_style="solid_line"
+        app:progress_text_color="@color/colorPrimary" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recylerView_home"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_circular" />
 </androidx.constraintlayout.widget.ConstraintLayout>
