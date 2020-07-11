@@ -1,1 +1,3 @@
+include ':circleprogressview_sample'
 include ':app', ':radionbuttonsample', ':dialogfragment_sample', ':recylerview_sample'
+include ':spannablestring_sample'
