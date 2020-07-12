@@ -23,7 +23,7 @@ import java.util.List;
 
 public class HomeRecylerViewActivity extends AppCompatActivity {
 
-    private String[] menuOptions = {"Simple Demo", "GridLayoutManager", "MutipleTypeViewRecyclerActivity", "CommanAapterDemoActivity", "CommanMutipleAdapterDemoActivity"};
+    private String[] menuOptions = {"Simple Demo", "GridLayoutManager", "MutipleTypeViewRecyclerActivity", "CommanAapterDemoActivity", "CommanMutipleAdapterDemoActivity","StickHeaderRecylerViewActivity"};
 
     private RecyclerView recyclerView;
 
@@ -70,6 +70,10 @@ public class HomeRecylerViewActivity extends AppCompatActivity {
                     case 4:
                         // CommanAapter 用法demo
                         startActivity(new Intent(HomeRecylerViewActivity.this, CommanMutipleAdapterDemoActivity.class));
+                        break;
+                    case 5:
+                        // RecylerView磁性吸附header
+                        startActivity(new Intent(HomeRecylerViewActivity.this, StickHeaderRecylerViewActivity.class));
                         break;
                 }
             }

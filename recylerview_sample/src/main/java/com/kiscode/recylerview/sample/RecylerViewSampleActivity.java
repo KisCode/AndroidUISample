@@ -3,7 +3,6 @@ package com.kiscode.recylerview.sample;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,12 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
-
-import com.kiscode.recylerview.sample.decoration.StickDecoration;
-import com.kiscode.recylerview.sample.decoration.StickyItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -93,12 +87,10 @@ public class RecylerViewSampleActivity extends AppCompatActivity {
         mAdapter = new HomeAdapter();
         recyclerView.setAdapter(mAdapter);
 
-      /*  //3. 设置分割线 DividerItemDecoration为系统自带分割线
+        //3. 设置分割线 DividerItemDecoration为系统自带分割线
         DividerItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         //设置分割线drawable，可自定义样式
-        itemDecoration.setDrawable(getDrawable(R.drawable.shape_divider));*/
-
-        StickDecoration itemDecoration = new StickDecoration();
+        itemDecoration.setDrawable(getDrawable(R.drawable.shape_divider));
         recyclerView.addItemDecoration(itemDecoration);
 
         //4. 设置动画
