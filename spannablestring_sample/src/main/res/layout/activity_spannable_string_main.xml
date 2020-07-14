@@ -117,7 +117,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:text="ClickableSpan"
+        android:text="ClickableSpan 打开新页面SpannableStringBuilder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

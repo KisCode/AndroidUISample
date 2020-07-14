@@ -205,6 +205,7 @@ public class SpannableStringMainActivity extends AppCompatActivity {
             @Override
             public void onClick(@NonNull View widget) {
                 Toast.makeText(SpannableStringMainActivity.this, "Click ME!", Toast.LENGTH_LONG).show();
+                SpannableStringBuilderActivity.start(SpannableStringMainActivity.this);
             }
 
             @Override
