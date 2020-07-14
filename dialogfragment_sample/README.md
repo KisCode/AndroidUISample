@@ -25,26 +25,19 @@ setStyle(DialogFragment.STYLE_NO_TITLE, R.style.AppDialogTheme);
 
 声明style样式
 ```xml
-<!-- Define your custom dialog theme here extending from base -->
-    <style name="AppDialogTheme" parent="Theme.AppCompat.Light.Dialog">
-        <!-- Define color properties as desired -->
-        <item name="colorPrimary">@color/dark_blue</item>
-        <item name="colorAccent">@color/dark_blue</item>
-        <item name="colorPrimaryDark">#000</item>
-        <item name="colorControlNormal">@color/dark_blue</item>
-        <item name="android:textColorHighlight">@color/light_blue</item>
-        <!-- Define window properties as desired -->
-        <!--是否显示title-->
-        <item name="android:windowNoTitle">false</item>
-        <!--是否是全屏-->
-        <item name="android:windowFullscreen">true</item>
-        <!--是否浮现在activity之上-->
-        <item name="android:windowIsFloating">false</item>
-        <!--背景颜色-->
-        <item name="android:windowBackground">@color/medium_green</item>
-        <!--点击空白是否消失-->
-        <item name="android:windowCloseOnTouchOutside">true</item>
-    </style>
+<style name="AppDialogFragmentFullScreenTheme" parent="Theme.AppCompat.Light.Dialog">
+    <!-- Define window properties as desired -->
+    <item name="android:background">@android:color/transparent</item>
+    <item name="android:windowBackground">@android:color/transparent</item>
+    <!--是否显示title-->
+    <item name="android:windowNoTitle">true</item>
+    <!--是否是全屏-->
+    <item name="android:windowFullscreen">true</item>
+    <!--是否浮现在activity之上-->
+    <item name="android:windowIsFloating">false</item>
+    <!--点击空白是否消失-->
+    <item name="android:windowCloseOnTouchOutside">false</item>
+</style>
 ```
 
 ### 2. 获取屏幕宽高，设定Window宽高设置全屏
