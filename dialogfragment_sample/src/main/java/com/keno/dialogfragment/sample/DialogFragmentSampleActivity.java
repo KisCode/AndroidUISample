@@ -4,16 +4,18 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
+import android.widget.SeekBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
 
 import com.keno.dialogfragment.sample.fragment.ConfirtAlertDialogFragment;
+import com.keno.dialogfragment.sample.fragment.CustomSizeDialogFragment;
 import com.keno.dialogfragment.sample.fragment.EditDialogFragment;
+import com.keno.dialogfragment.sample.util.ScreenUtil;
 
 /**
  * Description:
@@ -32,6 +34,9 @@ public class DialogFragmentSampleActivity extends AppCompatActivity implements V
     private Button btnShowDialog;
     private Button btnShowDialogfragment;
     private Button btnShowConfirmDialogfragment;
+    private Button btnShowCustomeSizeDialogFragment;
+    private SeekBar seekbarWidth;
+    private SeekBar seekbarHeight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +53,10 @@ public class DialogFragmentSampleActivity extends AppCompatActivity implements V
         btnShowDialogfragment.setOnClickListener(this);
         btnShowConfirmDialogfragment = (Button) findViewById(R.id.btn_show_confirm_dialogfragment);
         btnShowConfirmDialogfragment.setOnClickListener(this);
+        btnShowCustomeSizeDialogFragment = (Button) findViewById(R.id.btn_show_customsize_dialogfragment);
+        btnShowCustomeSizeDialogFragment.setOnClickListener(this);
+        seekbarWidth = findViewById(R.id.seekbar_width);
+        seekbarHeight = findViewById(R.id.seekbar_height);
     }
 
     @Override
@@ -57,14 +66,25 @@ public class DialogFragmentSampleActivity extends AppCompatActivity implements V
                 showAlertDialog();
                 break;
             case R.id.btn_show_dialogfragment:
-EditDialogFragment editDialogFragment = new EditDialogFragment();
+                EditDialogFragment editDialogFragment = new EditDialogFragment();
 // style dialog 设置dialogFragment样式
 //                editDialogFragment.setStyle(DialogFragment.STYLE_NORMAL, R.style.AppDialogTheme);
-editDialogFragment.show(getSupportFragmentManager(), "EditDialogFragment");
+                editDialogFragment.show(getSupportFragmentManager(), "EditDialogFragment");
                 break;
             case R.id.btn_show_confirm_dialogfragment:
                 ConfirtAlertDialogFragment confirtAlertDialogFragment = new ConfirtAlertDialogFragment();
                 confirtAlertDialogFragment.show(getSupportFragmentManager(), "EditDialogFragment");
+                break;
+            case R.id.btn_show_customsize_dialogfragment:
+                //自定义大小的对话框
+                CustomSizeDialogFragment customSizeDialogFragment = new CustomSizeDialogFragment();
+                Bundle bundle = new Bundle();
+                int width = getScreenWidth() * seekbarWidth.getProgress() / 100;
+                int height = getScreenHeight() * seekbarHeight.getProgress() / 100;
+                bundle.putSerializable(CustomSizeDialogFragment.KEY_WIDTH, width);
+                bundle.putSerializable(CustomSizeDialogFragment.KEY_HEIGHT, height);
+                customSizeDialogFragment.setArguments(bundle);
+                customSizeDialogFragment.show(getSupportFragmentManager(), "CustomSizeDialogFragment");
                 break;
         }
     }
@@ -80,5 +100,18 @@ editDialogFragment.show(getSupportFragmentManager(), "EditDialogFragment");
         });
         Dialog dialog = builder.create();
         dialog.show();
+    }
+
+    private int getScreenWidth() {
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        return dm.widthPixels;
+    }
+
+    private int getScreenHeight() {
+//        return ScreenUtil.getScreenRealHeight(this);
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        return dm.heightPixels;
     }
 }

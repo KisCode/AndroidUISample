@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env shpape_dialog_top_header
 
 ##############################################################################
 ##
@@ -127,7 +127,7 @@ if $cygwin ; then
     if [ "$GRADLE_CYGPATTERN" != "" ] ; then
         OURCYGPATTERN="$OURCYGPATTERN|($GRADLE_CYGPATTERN)"
     fi
-    # Now convert the arguments - kludge to limit ourselves to /bin/sh
+    # Now convert the arguments - kludge to limit ourselves to /bin/shpape_dialog_top_header
     i=0
     for arg in "$@" ; do
         CHECK=`echo "$arg"|egrep -c "$OURCYGPATTERN" -`

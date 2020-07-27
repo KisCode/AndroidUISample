@@ -1,6 +1,6 @@
 # AndroidUISample
 # 1.为什么会有这个项目
-作为一个工作多年的程序员，深知积累与分享的重要性。此项目特将自己在Android开发中使用频率较高知识点通过一个个module的形式在该项目中展示，，后续会不断补充本项目涉及知识点相对基础入门，可供新手学习借鉴，也请各位大神多多指教。
+作为一个工作多年的程序员，深知积累与分享的重要性。此项目特将自己在Android开发中使用频率较高知识点通过一个个module的形式在该项目中展示，后续会不断补充本项目涉及知识点相对基础入门，可供新手学习借鉴，也请各位大神多多指教。
 
 # 2.能学到什么
 [ 如何实现一个自定义View-灵活定制的环形进度View](https://github.com/KisCode/AndroidUISample/tree/develop/circleprogressview_sample)
