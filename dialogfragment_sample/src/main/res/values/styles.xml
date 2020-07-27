@@ -17,14 +17,14 @@
         <item name="android:textColorHighlight">@color/light_blue</item>
     </style>
 
-    <!-- Define your custom dialog theme here extending from base -->
+    <!-- 全屏对话框 -->
     <style name="AppDialogTheme" parent="Theme.AppCompat.Light.Dialog">
-        <!-- Define color properties as desired -->
-        <item name="colorPrimary">@color/dark_blue</item>
-        <item name="colorAccent">@color/dark_blue</item>
-        <item name="colorPrimaryDark">#000</item>
-        <item name="colorControlNormal">@color/dark_blue</item>
-        <item name="android:textColorHighlight">@color/light_blue</item>
+        <!--        &lt;!&ndash; Define color properties as desired &ndash;&gt;
+                <item name="colorPrimary">@color/dark_blue</item>
+                <item name="colorAccent">@color/dark_blue</item>
+                <item name="colorPrimaryDark">#000</item>
+                <item name="colorControlNormal">@color/dark_blue</item>
+                <item name="android:textColorHighlight">@color/light_blue</item>-->
         <!-- Define window properties as desired -->
         <!--是否显示title-->
         <item name="android:windowNoTitle">false</item>
@@ -33,9 +33,24 @@
         <!--是否浮现在activity之上-->
         <item name="android:windowIsFloating">false</item>
         <!--背景颜色-->
-        <item name="android:windowBackground">@color/medium_green</item>
+        <item name="android:windowBackground">@color/light_blue</item>
         <!--点击空白是否消失-->
         <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
+
+    <!--    自定义对话框样式-->
+    <style name="styleNormalDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">false</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">true</item><!--半透明-->
+        <item name="android:windowNoTitle">false</item><!--无标题-->
+        <item name="android:windowFullscreen">true</item><!--全屏-->
+        <item name="android:windowBackground">@drawable/shape_bg_black_dialog</item><!--背景透明-->
+        <!--        <item name="android:windowBackground">@null</item>&lt;!&ndash;背景透明&ndash;&gt;-->
+        <item name="android:backgroundDimEnabled">true</item><!--模糊-->
+        <item name="android:windowCloseOnTouchOutside">true</item><!--点击空白是否消失-->
+
+
     </style>
 
 </resources>
