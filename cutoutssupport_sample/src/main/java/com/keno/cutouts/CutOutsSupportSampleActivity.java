@@ -1,5 +1,7 @@
 package com.keno.cutouts;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
@@ -40,6 +42,10 @@ public class CutOutsSupportSampleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cut_outs_support_sample);
     }
 
+    public static void start(Context context) {
+        Intent starter = new Intent(context, CutOutsSupportSampleActivity.class);
+        context.startActivity(starter);
+    }
     @Override
     protected void onStart() {
         super.onStart();
@@ -49,7 +55,6 @@ public class CutOutsSupportSampleActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-            getDisplayCutouts();
             getNotchParams();
         }
     }
@@ -82,32 +87,9 @@ public class CutOutsSupportSampleActivity extends AppCompatActivity {
 
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.P)
-    private void getDisplayCutouts() {
-        View decorView = getWindow().getDecorView();
-        if (decorView == null) {
-            return;
-        }
-
-        // 官方建议：避免对状态栏高度进行硬编码，因为这样做可能会导致内容重叠或被切断。如有可能，请使用 WindowInsetsCompat 检索状态栏高度，并确定要对您的内容应用的适当内边距
-        WindowInsets windowInsets = decorView.getRootWindowInsets();
-        if (windowInsets == null) {
-            return;
-        }
-
-        DisplayCutout displayCutout = windowInsets.getDisplayCutout();
-        if (displayCutout == null) {
-            return;
-        }
-        //getBoundingRects返回List<Rect>,没一个list表示一个不可显示的区域，即刘海屏，可以遍历这个list中的Rect,
-        //即可以获得每一个刘海屏的坐标位置,当然你也可以用类似getSafeInsetBottom的api
-        Log.d("displayCutout", "**controlView**" + displayCutout.getBoundingRects());
-        Log.d("displayCutout", "**controlView**" + displayCutout.getSafeInsetBottom());
-        Log.d("displayCutout", "**controlView**" + displayCutout.getSafeInsetLeft());
-        Log.d("displayCutout", "**controlView**" + displayCutout.getSafeInsetRight());
-        Log.d("displayCutout", "**controlView**" + displayCutout.getSafeInsetTop());
-    }
-
+    /***
+     * 获取留海参数设置
+     */
     @RequiresApi(api = Build.VERSION_CODES.P)
     private void getNotchParams() {
         final View decorView = getWindow().getDecorView();
