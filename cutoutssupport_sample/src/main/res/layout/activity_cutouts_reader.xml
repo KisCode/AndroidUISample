@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E3EDCD">
+
+    <TextView
+        android:id="@+id/tv_title_reader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:text="@string/text_title_wiki"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp" />
+
+    <ScrollView
+        android:id="@+id/scrollview_reader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CutOutsFullScreenActivity">
+
+        <TextView
+            android:id="@+id/tv_content_reader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/text_about_wiki"
+            android:textColor="#8C8C8C"
+            android:textSize="16sp" />
+
+    </ScrollView>
+</FrameLayout>

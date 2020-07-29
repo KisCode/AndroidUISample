@@ -34,7 +34,7 @@ public class LeadActivity extends AppCompatActivity implements View.OnClickListe
                 countDownTime--;
                 handler.postDelayed(this, DELAY_MILLIS);
             } else {
-                CutOutsSupportSampleActivity.start(LeadActivity.this);
+                CutOutsFullScreenActivity.start(LeadActivity.this);
                 finish();
             }
         }
@@ -124,15 +124,16 @@ public class LeadActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.btn_cutouts_fullscreen:
                 //Cutouts Full Screen 通过代码实现全面适配
-                CutOutsSupportSampleActivity.start(LeadActivity.this);
+                CutOutsFullScreenActivity.start(this);
                 finish();
                 break;
             case R.id.btn_story_cutouts:
                 //实现一个小说阅读器的全屏页面，并将小说标题强制写入 状态栏区域
+                CutoutsReaderActivity.start(this);
                 break;
             case R.id.btn_customview_cutouts:
                 //自定义布局 适配留海屏 旋转
-                CustomLayoutRotateActivity.start(LeadActivity.this);
+                CustomLayoutRotateActivity.start(this);
                 finish();
                 break;
         }

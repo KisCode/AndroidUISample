@@ -25,10 +25,10 @@ import java.util.List;
  * Author: keno
  * Date : 2020/7/28 19:31
  **/
-public class CutOutsSupportSampleActivity extends AppCompatActivity {
+public class CutOutsFullScreenActivity extends AppCompatActivity {
 
     public static void start(Context context) {
-        Intent starter = new Intent(context, CutOutsSupportSampleActivity.class);
+        Intent starter = new Intent(context, CutOutsFullScreenActivity.class);
         context.startActivity(starter);
     }
 
@@ -42,7 +42,7 @@ public class CutOutsSupportSampleActivity extends AppCompatActivity {
         //虚拟按键背景透明
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
 
-        setContentView(R.layout.activity_cut_outs_support_sample);
+        setContentView(R.layout.activity_cutouts_fullscreen);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             initCutouts();
