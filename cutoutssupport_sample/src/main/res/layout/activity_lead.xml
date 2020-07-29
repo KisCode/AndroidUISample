@@ -27,10 +27,36 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="29dp"
         android:padding="8dp"
-        android:text="@string/tip_count_down"
         android:textColor="@android:color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_cutouts_fullscreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="留海屏全屏显示"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/btn_story_cutouts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="小说阅读页面刘海屏适配"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_cutouts_fullscreen" />
+
+    <Button
+        android:id="@+id/btn_customview_cutouts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="自定义布局留海屏旋转适配"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_story_cutouts" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

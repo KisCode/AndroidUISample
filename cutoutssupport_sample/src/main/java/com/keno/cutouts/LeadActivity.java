@@ -1,15 +1,17 @@
 package com.keno.cutouts;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Description: 引导页 实现留海屏全屏显示引导图片的效果
@@ -17,9 +19,9 @@ import android.widget.TextView;
  * CreateDate: 2020/7/28 21:14
  */
 
-public class LeadActivity extends AppCompatActivity {
+public class LeadActivity extends AppCompatActivity implements View.OnClickListener {
     public static final int DELAY_MILLIS = 1000;
-    private int countDownTime = 3;
+    private int countDownTime = 10;
 
     private TextView tvTime;
 
@@ -37,6 +39,10 @@ public class LeadActivity extends AppCompatActivity {
             }
         }
     };
+    private TextView textView;
+    private Button btnCutoutsFullscreen;
+    private Button btnStoryCutouts;
+    private Button btnCustomviewCutouts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +58,28 @@ public class LeadActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_lead);
         initView();
-        startCountDown();
+        /*
+        startCountDown();  //开始倒计时
+        */
+    }
+
+    /***
+     * 当Activity 获得or失去焦点时触发
+     * @param hasFocus
+     */
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        Log.i("FocusChanged", "onWindowFocusChanged hasFocus:" + hasFocus);
+        if (hasFocus && Build.VERSION.SDK_INT >= 19) {
+            View decorView = getWindow().getDecorView();
+            decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.P)
@@ -74,14 +101,40 @@ public class LeadActivity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
         systemUiVisibility |= flags;
         getWindow().getDecorView().setSystemUiVisibility(systemUiVisibility);
-
     }
 
     private void initView() {
         tvTime = findViewById(R.id.tv_time);
+        textView = (TextView) findViewById(R.id.textView);
+        textView.setOnClickListener(this);
+        btnCutoutsFullscreen = (Button) findViewById(R.id.btn_cutouts_fullscreen);
+        btnCutoutsFullscreen.setOnClickListener(this);
+        btnStoryCutouts = (Button) findViewById(R.id.btn_story_cutouts);
+        btnStoryCutouts.setOnClickListener(this);
+        btnCustomviewCutouts = (Button) findViewById(R.id.btn_customview_cutouts);
+        btnCustomviewCutouts.setOnClickListener(this);
     }
 
     private void startCountDown() {
         handler.postDelayed(runnable, DELAY_MILLIS);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_cutouts_fullscreen:
+                //Cutouts Full Screen 通过代码实现全面适配
+                CutOutsSupportSampleActivity.start(LeadActivity.this);
+                finish();
+                break;
+            case R.id.btn_story_cutouts:
+                //实现一个小说阅读器的全屏页面，并将小说标题强制写入 状态栏区域
+                break;
+            case R.id.btn_customview_cutouts:
+                //自定义布局 适配留海屏 旋转
+                CustomLayoutRotateActivity.start(LeadActivity.this);
+                finish();
+                break;
+        }
     }
 }

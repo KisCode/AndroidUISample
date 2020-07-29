@@ -10,16 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".CustomLayoutRotateActivity"
+            android:fitsSystemWindows="true"></activity>
+        <activity
             android:name=".LeadActivity"
             android:theme="@style/CutoutsActivityTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CutOutsSupportSampleActivity">
-
-        </activity>
+        <activity android:name=".CutOutsSupportSampleActivity"></activity>
     </application>
 
 </manifest>
