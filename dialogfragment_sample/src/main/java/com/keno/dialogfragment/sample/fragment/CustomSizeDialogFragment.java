@@ -24,7 +24,6 @@ public class CustomSizeDialogFragment extends DialogFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setStyle(DialogFragment.STYLE_NO_TITLE, R.style.styleNormalDialog);
         setStyle(DialogFragment.STYLE_NO_TITLE, R.style.styleNormalDialog);
     }
 
@@ -40,7 +39,7 @@ public class CustomSizeDialogFragment extends DialogFragment {
         int height = getArguments().getInt(KEY_HEIGHT);
 
         Window dialogWindow = getDialog().getWindow();
-//        dialogWindow.setAttributes(lp);
+        //设置对话框的宽高
         dialogWindow.setLayout(width, height);
     }
 
