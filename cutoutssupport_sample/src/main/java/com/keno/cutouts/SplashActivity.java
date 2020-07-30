@@ -19,7 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
  * CreateDate: 2020/7/28 21:14
  */
 
-public class LeadActivity extends AppCompatActivity implements View.OnClickListener {
+public class SplashActivity extends AppCompatActivity implements View.OnClickListener {
     public static final int DELAY_MILLIS = 1000;
     private int countDownTime = 10;
 
@@ -34,7 +34,7 @@ public class LeadActivity extends AppCompatActivity implements View.OnClickListe
                 countDownTime--;
                 handler.postDelayed(this, DELAY_MILLIS);
             } else {
-                CutOutsFullScreenActivity.start(LeadActivity.this);
+                CutOutsFullScreenActivity.start(SplashActivity.this);
                 finish();
             }
         }
@@ -48,19 +48,14 @@ public class LeadActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //设置全屏显示
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             initCutouts();
         }
 
         setContentView(R.layout.activity_lead);
         initView();
-        /*
-        startCountDown();  //开始倒计时
-        */
+
+//        startCountDown();  //开始倒计时
     }
 
     /***

@@ -19,7 +19,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 /**
  * Description: 自定义布局适配留海屏
  * 主要动态计算留海区域 WindowInsets.getDisplayCutout()，实现按钮等交互控件不被留海覆盖
- * Author: kanjianxiong
+ * Author: keno
  * Date : 2020/7/29 18:04
  **/
 public class CustomLayoutRotateActivity extends AppCompatActivity {
