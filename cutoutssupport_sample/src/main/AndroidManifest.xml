@@ -14,7 +14,7 @@
             android:name=".CustomLayoutRotateActivity"
             android:fitsSystemWindows="true" />
         <activity
-            android:name=".LeadActivity"
+            android:name=".SplashActivity"
             android:theme="@style/CutoutsActivityTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

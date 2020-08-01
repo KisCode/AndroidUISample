@@ -2,8 +2,6 @@ package com.keno.cutouts;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,7 +18,6 @@ import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import java.util.List;
 
@@ -88,6 +85,7 @@ public class CutoutsReaderActivity extends AppCompatActivity {
         getWindow().getDecorView().setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() {
             @Override
             public WindowInsets onApplyWindowInsets(View v, WindowInsets insets) {
+                //获取刘海信息
                 DisplayCutout displayCutout = insets.getDisplayCutout();
 
                 int top = displayCutout.getSafeInsetTop();
@@ -95,29 +93,29 @@ public class CutoutsReaderActivity extends AppCompatActivity {
                 int left = displayCutout.getSafeInsetLeft();
                 int right = displayCutout.getSafeInsetRight();
 
-                Log.i("displayCutoutReader", "安全区域距离屏幕左边的距离 SafeInsetLeft:" + left);
-                Log.i("displayCutoutReader", "安全区域距离屏幕右部的距离 SafeInsetRight:" + right);
-                Log.i("displayCutoutReader", "安全区域距离屏幕顶部的距离 SafeInsetTop:" + top);
-                Log.i("displayCutoutReader", "安全区域距离屏幕底部的距离 SafeInsetBottom:" + bottom);
-
-//                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) scrollView.getLayoutParams();
-//                layoutParams.setMargins(left, top, right, bottom);
+                //通过scrollView padding设置内容不显示在安全区域 确保scrollView不与安全区域重合
                 scrollView.setPadding(left, top, right, bottom);
 
+                //获取刘海上下左右位置，从而计算出刘海宽高
                 List<Rect> boundingList = displayCutout.getBoundingRects();
                 if (!boundingList.isEmpty()) {
-                    FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) tvTitle.getLayoutParams();
+                    FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) scrollView.getLayoutParams();
                     //获取留海区域
                     Rect boundRect = boundingList.get(0);
+                    //通过设置 scrollView和顶部标题间距
+                    Log.i("displayRect", "left:" + boundRect.left + " top:" + boundRect.top + " right:" + boundRect.right + " bottom:" + boundRect.bottom);
                     if (top > 0) {
                         //竖屏在顶部
+                        //标题强制显示在安全留海区域，且宽度为顶部留海区域左侧宽度
                         tvTitle.setWidth(boundRect.left);
                         tvTitle.setHeight(boundRect.bottom);
                         tvTitle.setGravity(Gravity.CENTER_VERTICAL);
-                    } else if (bottom > 0) {
-
+                        layoutParams.setMargins(0, 0, 0, 0);
+                    } else if (left > 0 || right > 0) {
+                        //留海在左 or 在右
+                        int height = tvTitle.getMeasuredHeight();
+                        layoutParams.setMargins(0, height, 0, 0);
                     }
-
                 }
 
                 return insets.consumeDisplayCutout();

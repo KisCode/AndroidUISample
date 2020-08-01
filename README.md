@@ -16,6 +16,16 @@
 
 [SpannableString的使用-让普通文本变得丰富多彩](https://github.com/KisCode/AndroidUISample/tree/develop/spannablestring_sample)
 
+[滚轮时间日期选择器](https://github.com/KisCode/AndroidUISample/tree/develop/datetimepicker_sample)
+
+
+[刘海屏的适配](https://github.com/KisCode/AndroidUISample/tree/develop/cutoutssupport_sample)
+- Google官方刘海屏适配方案
+- 实现一个刘海屏设备的引导页
+- 刘海区域和交互控件重合适配
+- 沉浸式小说阅读页面刘海屏适配
+
+
 
 
 

@@ -19,7 +19,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 /**
  * Description: 自定义布局适配留海屏
  * 主要动态计算留海区域 WindowInsets.getDisplayCutout()，实现按钮等交互控件不被留海覆盖
- * Author: kanjianxiong
+ * Author: keno
  * Date : 2020/7/29 18:04
  **/
 public class CustomLayoutRotateActivity extends AppCompatActivity {
@@ -81,8 +81,16 @@ public class CustomLayoutRotateActivity extends AppCompatActivity {
                     Log.i("displayCutout", "安全区域距离屏幕底部的距离 SafeInsetBottom:" + bottom);
                     ConstraintLayout.LayoutParams topLayoutParams = (ConstraintLayout.LayoutParams) btnTop.getLayoutParams();
                     ConstraintLayout.LayoutParams leftLayoutParams = (ConstraintLayout.LayoutParams) btnLeft.getLayoutParams();
-                    topLayoutParams.setMargins(left, top, right, bottom);
-                    leftLayoutParams.setMargins(left, top, right, bottom);
+//                    topLayoutParams.setMargins(left, top, right, bottom);
+//                    leftLayoutParams.setMargins(left, top, right, bottom);
+
+                    if (top > 0) {
+                        //
+                        topLayoutParams.setMargins(0, top, 0, bottom);
+                    } else if (left > 0 || right > 0) {
+                        leftLayoutParams.setMargins(left, 0, right, 0);
+
+                    }
                 }
                 return insets.consumeDisplayCutout();
             }
