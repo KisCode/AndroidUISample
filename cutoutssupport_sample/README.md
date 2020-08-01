@@ -36,7 +36,7 @@ layoutParams.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DI
 View decorView = getWindow().getDecorView();
 decorView.setLayoutParams(layoutParams);
 ```
-测试发现除了 设置页面DecorView的LayoutParams.layoutInDisplayCutoutMode属性为LayoutParams.layoutInDisplayCutoutMode后运行发现页面内容并未显示到刘海区域
+测试发现除了 设置页面DecorView的LayoutParams.layoutInDisplayCutoutMode属性为LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES后运行发现页面内容并未显示到刘海区域
 ![刘海屏设置](https://github.com/KisCode/AndroidUISample/blob/develop/cutoutssupport_sample/image/Screenshot_1596120201.png)
 
 
