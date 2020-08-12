@@ -25,6 +25,8 @@
 - 刘海区域和交互控件重合适配
 - 沉浸式小说阅读页面刘海屏适配
 
+[应用退到后台点击桌面图标引导页面重复启动问题](https://github.com/KisCode/AndroidUISample/tree/develop/backgroudpersistent_sample)
+- 场景：打开应用 启动引导页A ，然后自动跳转首页B闭引导页A, 应用退到桌面后点击桌面图标会 会再次启动A-->B;我们希望能做到退到桌面时点击图标能直接打开首页B；
 
 
 
