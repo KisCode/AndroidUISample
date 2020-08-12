@@ -25,6 +25,8 @@
 - 刘海区域和交互控件重合适配
 - 沉浸式小说阅读页面刘海屏适配
 
+[应用退到后台点击桌面图标引导页面重复启动问题](https://github.com/KisCode/AndroidUISample/tree/develop/backgroudpersistent_sample)
+
 
 
 
