@@ -62,6 +62,9 @@ public class StickHeaderDecoration extends RecyclerView.ItemDecoration {
     public void onDrawOver(@NonNull Canvas c, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
         super.onDrawOver(c, parent, state);
         LinearLayoutManager layoutManager = (LinearLayoutManager) parent.getLayoutManager();
+        if (layoutManager == null) {
+            return;
+        }
 
         //获取recyclerView在当前屏幕内显示可见的 childView个数
         int childCount = parent.getChildCount();
@@ -101,7 +104,6 @@ public class StickHeaderDecoration extends RecyclerView.ItemDecoration {
                     }
                 }
             }
-
             drawStickView(c);
         }
     }

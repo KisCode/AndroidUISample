@@ -65,64 +65,6 @@ public class StickDecoration extends RecyclerView.ItemDecoration {
                 saveStickPostion(pos);
                 getStickyViewHolder(parent, pos);
 
-
-                /*if (childView.getTop() <= 0) {
-                    //滑到顶部直接绑定
-                    bindDataForStickyView(mLayoutManager.findFirstVisibleItemPosition(), parent.getMeasuredWidth());
-                } else {
-                    //如果大于0，从position缓存中取得当前的position，然后绑定数据，计算View的宽高
-                    if (mStickItemPositionList.size() > 0) {
-                        if (mStickItemPositionList.size() == 1) {
-                            bindDataForStickyView(mStickItemPositionList.get(0), parent.getMeasuredWidth());
-                        } else {
-                            //查找当前view的相邻 上一个、下一个
-                            //1. 上一个
-                            int previousViewPostion = getPreviousViewPostion(parent);
-                            View previousView = null;
-                            if (previousViewPostion >= 0) {
-                                int childPos = previousViewPostion - mLayoutManager.findFirstVisibleItemPosition();
-                                previousView = parent.getChildAt(childPos);
-                            }
-
-                            int nextViewPostion = getNextViewPosition(parent);
-                            View nextView = null;
-                            if (nextViewPostion >= 0) {
-                                int childPos = nextViewPostion - mLayoutManager.findFirstVisibleItemPosition();
-                                nextView = parent.getChildAt(childPos);
-                            }
-
-                            if (previousView != null) {
-                                if (previousView.getBottom() >= 0) {
-                                    //当前 向下顶
-                                    bindDataForStickyView(previousViewPostion, parent.getMeasuredWidth());
-                                }
-                            }
-
-                            if (nextView != null) {
-                                if (nextView.getTop() <= mStickView.getHeight()) {
-                                    //当前View向上顶
-                                    mStickyViewMarginTop = mStickView.getHeight() - nextView.getTop();
-                                }
-                            }
-
-//                            int currentPosition = mLayoutManager.findFirstVisibleItemPosition() + i;
-//                            int indexOfCurrentPosition = mStickItemPositionList.lastIndexOf(currentPosition);
-//                            Log.i("bindNewData", currentPosition + "\tnew Pos:" + mStickItemPositionList.get(indexOfCurrentPosition - 1));
-
-//                            bindDataForStickyView(mStickItemPositionList.get(indexOfCurrentPosition - 1), parent.getMeasuredWidth());
-                        }
-                    }
-                }*/
-
-               /* int mStickyItemViewHeight = mViewHolder.itemView.getBottom() - mViewHolder.itemView.getTop();
-                //计算吸附的View距离顶部的高度
-                if (childView.getTop() > 0 && childView.getTop() <= mStickyItemViewHeight) {
-                    mStickyViewMarginTop = mStickyItemViewHeight - childView.getTop();
-                } else {
-                    mStickyViewMarginTop = 0;
-                }
-                drawStickyItemView(c);*/
-
                 int stickViewHeight = mViewHolder.itemView.getBottom() - mViewHolder.itemView.getTop();
                 if (childView.getTop() <= 0) {
                     mStickyViewMarginTop = 0;
