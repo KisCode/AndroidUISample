@@ -29,12 +29,8 @@ public class StickHeaderRecylerViewActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        recyclerviewStick = (RecyclerView) findViewById(R.id.recyclerview_stick);
+        recyclerviewStick = findViewById(R.id.recyclerview_stick);
         recyclerviewStick.setLayoutManager(new LinearLayoutManager(this));
-
-
-//        StickyItemDecoration itemDecoration = new StickyItemDecoration();
-//        StickDecoration itemDecoration = new StickDecoration();
         StickHeaderDecoration itemDecoration = new StickHeaderDecoration(TYPE_HEAD);
         recyclerviewStick.addItemDecoration(itemDecoration);
 

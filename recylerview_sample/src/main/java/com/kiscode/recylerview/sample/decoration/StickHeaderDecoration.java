@@ -2,6 +2,7 @@ package com.kiscode.recylerview.sample.decoration;
 
 
 import android.graphics.Canvas;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -62,6 +63,9 @@ public class StickHeaderDecoration extends RecyclerView.ItemDecoration {
     public void onDrawOver(@NonNull Canvas c, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
         super.onDrawOver(c, parent, state);
         LinearLayoutManager layoutManager = (LinearLayoutManager) parent.getLayoutManager();
+        if (layoutManager == null) {
+            return;
+        }
 
         //获取recyclerView在当前屏幕内显示可见的 childView个数
         int childCount = parent.getChildCount();
@@ -90,7 +94,6 @@ public class StickHeaderDecoration extends RecyclerView.ItemDecoration {
                     if (childView.getTop() <= stickViewHeight) {
                         //当前控件顶到 吸附stickView
                         mStickViewMarginTop = childView.getTop() - stickViewHeight;
-
                         if (dataPosition == mCurrentStickViewPos) {
                             //吸附stickView为当前childView 找childView的前一个吸附控件
                             int previousPosition = getPreviousViewPostion();
@@ -98,10 +101,27 @@ public class StickHeaderDecoration extends RecyclerView.ItemDecoration {
                                 bindDataForStickView(previousPosition, parent.getMeasuredWidth());
                             }
                         }
+                    } else {
+                        if (mStickViewMarginTop != 0) {
+                            mStickViewMarginTop = 0;
+                        }
                     }
                 }
-            }
+                Log.i("drawStickView", "getTop=" + mStickView.getTop()
+                        + "\t getBottom=" + mStickView.getBottom()
+                );
 
+
+            }
+            /*if (childView.getTop() < 0 || mStickViewMarginTop < 0) {
+                Log.e("drawStickView", "getTop=" + childView.getTop()
+                        + "\t getBottom=" + childView.getBottom()
+                        + "\t MarginTop=" + mStickViewMarginTop
+                        + "\t stickViewHeight=" + (mStickView.getBottom() - mStickView.getTop())
+                        + "\t dataPosition=" + dataPosition
+                        + "\t mCurrentStickViewPos=" + mCurrentStickViewPos
+                );
+            }*/
             drawStickView(c);
         }
     }

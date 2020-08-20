@@ -25,7 +25,7 @@ public class MockApi {
 
     public static List<String> getMockNumberDatas() {
         List<String> datas = new ArrayList<>();
-        for (int i = 1; i < 200; i++) {
+        for (int i = 1; i < 500; i++) {
             datas.add("No. " + i);
         }
         return datas;
