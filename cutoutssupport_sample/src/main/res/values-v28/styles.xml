@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="CutoutsActivityTheme" parent="splashThem">
-        <!-- default, shortEdges, never -->
+    <style name="splashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item><!--全屏-->
+        <item name="android:windowContentOverlay">@null</item><!--内容区域覆盖-->
+        <item name="android:windowTranslucentStatus">true</item><!--沉浸透明状态栏-->
+        <item name="android:windowBackground">@drawable/bg</item><!--冷启动背景图片-->
         <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
     </style>
 </resources>

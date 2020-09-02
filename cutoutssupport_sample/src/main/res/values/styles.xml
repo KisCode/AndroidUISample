@@ -8,11 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="splashThem" parent="AppTheme">
+<!--    <style name="splashThem" parent="AppTheme">-->
+    <style name="splashTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowFullscreen">true</item><!--全屏-->
         <item name="android:windowContentOverlay">@null</item><!--内容区域覆盖-->
         <item name="android:windowTranslucentStatus">true</item><!--沉浸透明状态栏-->
         <item name="android:windowBackground">@drawable/bg</item><!--冷启动背景图片-->
-
     </style>
 </resources>

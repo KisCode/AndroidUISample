@@ -15,7 +15,7 @@
             android:fitsSystemWindows="true" />
         <activity
             android:name=".SplashActivity"
-            android:theme="@style/CutoutsActivityTheme">
+            android:theme="@style/splashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
