@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -15,10 +13,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Description: 引导页 实现留海屏全屏显示引导图片的效果
+ *
+ * 运行在低版本上异常：You need to use a Theme.AppCompat theme (or descendant) with this activity.
  * Author: keno
  * CreateDate: 2020/7/28 21:14
  */
-
 public class SplashActivity extends AppCompatActivity implements View.OnClickListener {
     public static final int DELAY_MILLIS = 1000;
     private int countDownTime = 10;

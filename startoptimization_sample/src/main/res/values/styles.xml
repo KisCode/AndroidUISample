@@ -1,0 +1,18 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!--关闭预加载,不显示启动黑白屏-->
+        <!--          <item name="android:windowDisablePreview">true</item>-->
+        <!--背景透明-->
+        <!--          <item name="android:windowIsTranslucent">true</item>-->
+
+        <!--        设置启动闪屏背景图：颜色、图片、layout        -->
+        <item name="android:windowBackground">@mipmap/ic_launch_bg</item>
+    </style>
+
+</resources>
