@@ -16,7 +16,26 @@ import java.util.List;
  * Date : 2020/9/9 11:35
  **/
 public class OptApplication extends Application {
+    /*1.ADB命令监控应用启动
+     adb shell am start -S -W packageName/activityName
+
+结果：
+    Stopping: demo.kiscode.start.opt
+    Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=demo.kiscode.start.opt/.StartOptMainActivity }
+    Status: ok
+    LaunchState: COLD
+    Activity: demo.kiscode.start.opt/.StartOptMainActivity
+    TotalTime: 4520
+    WaitTime: 4546
+    Complete
+
+
+    ThisTime:最后一个启动的Activity的启动耗时；
+    TotalTime:自己的所有Activity的启动耗时，包括创建进程 + Application初始化 + Activity初始化到界面显示的过程；
+    WaitTime: ActivityManagerService启动App的Activity时的总时间（包括当前Activity的onPause()和自己Activity的启动）
+    */
     private static final String TAG = "OptApplication";
+
 
     @Override
     public void onCreate() {
@@ -32,11 +51,6 @@ public class OptApplication extends Application {
             init();
             //结束追踪
             Debug.stopMethodTracing();
-        }
-
-        List<String> list = new ArrayList<>();
-        for (String string : list) {
-
         }
     }
 
