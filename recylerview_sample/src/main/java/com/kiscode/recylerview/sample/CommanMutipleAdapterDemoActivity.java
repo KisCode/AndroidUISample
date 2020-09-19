@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.kiscode.recylerview.sample.adapter.MutipleTypeViewAdapter;
 import com.kiscode.recylerview.sample.comman.CommanMutipleAdapter;
 import com.kiscode.recylerview.sample.comman.CommanViewHolder;
 import com.kiscode.recylerview.sample.comman.MutipleItemSupport;

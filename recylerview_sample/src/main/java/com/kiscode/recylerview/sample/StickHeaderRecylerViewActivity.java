@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.kiscode.recylerview.sample.comman.CommanMutipleAdapter;
 import com.kiscode.recylerview.sample.comman.CommanViewHolder;
 import com.kiscode.recylerview.sample.comman.MutipleItemSupport;
-import com.kiscode.recylerview.sample.decoration.StickDecoration;
 import com.kiscode.recylerview.sample.decoration.StickHeaderDecoration;
 import com.kiscode.recylerview.sample.mock.MockApi;
 
