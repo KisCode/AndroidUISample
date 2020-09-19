@@ -54,12 +54,6 @@ public class CutoutsReaderActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-    }
-
     private void initView() {
         scrollView = findViewById(R.id.scrollview_reader);
         TextView tvContent = findViewById(R.id.tv_content_reader);

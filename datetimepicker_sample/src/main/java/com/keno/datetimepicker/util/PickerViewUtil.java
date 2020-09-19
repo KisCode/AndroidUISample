@@ -101,11 +101,7 @@ public class PickerViewUtil {
                 try {
                     //设置分割线的颜色值
                     pf.set(numberPicker, new ColorDrawable(ContextCompat.getColor(context, colorRes)));
-                } catch (IllegalArgumentException e) {
-                    e.printStackTrace();
-                } catch (Resources.NotFoundException e) {
-                    e.printStackTrace();
-                } catch (IllegalAccessException e) {
+                } catch (IllegalArgumentException | Resources.NotFoundException | IllegalAccessException e) {
                     e.printStackTrace();
                 }
                 break;

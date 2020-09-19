@@ -78,12 +78,6 @@ public class CircleProgreeView extends View {
         mPaint.setStrokeWidth(mRoundWidth + mShadowWidth);
         //定义圆弧的形状和大小
         //上下左右分别是
-        /***
-         * left指的是圆的最左到左屏幕的距离，
-         * top是圆顶部到屏幕顶部的距离
-         * right是圆最右侧到左侧屏幕巨鹿，
-         * bottom是圆底部到屏幕顶部距离
-         */
         int left = center - radius -mShadowWidth/2;
         int right = center + radius +mShadowWidth/2;
         int top = center - radius- mShadowWidth/2;
