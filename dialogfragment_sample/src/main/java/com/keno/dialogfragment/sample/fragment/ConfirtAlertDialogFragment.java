@@ -48,8 +48,7 @@ public class ConfirtAlertDialogFragment extends DialogFragment {
 
             }
         });
-        Dialog dialog = builder.create();
-        return dialog;
+        return builder.create();
     }
 
     @Nullable

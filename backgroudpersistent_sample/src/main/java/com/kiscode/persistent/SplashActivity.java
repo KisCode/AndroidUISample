@@ -57,10 +57,8 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_homepage:
-                toHome();
-                break;
+        if (v.getId() == R.id.btn_homepage) {
+            toHome();
         }
     }
 

@@ -97,8 +97,7 @@ public class HomeRecylerViewActivity extends AppCompatActivity {
         @NonNull
         @Override
         public MyHomeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            MyHomeViewHolder homeViewHolder = new MyHomeViewHolder(LayoutInflater.from(context).inflate(R.layout.item_text_layout, parent, false));
-            return homeViewHolder;
+            return new MyHomeViewHolder(LayoutInflater.from(context).inflate(R.layout.item_text_layout, parent, false));
         }
 
         @Override

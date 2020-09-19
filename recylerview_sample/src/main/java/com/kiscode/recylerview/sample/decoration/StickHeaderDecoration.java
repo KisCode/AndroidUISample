@@ -204,8 +204,7 @@ public class StickHeaderDecoration extends RecyclerView.ItemDecoration {
         int indexOfCurrentPos = mStickPositionList.indexOf(mCurrentStickViewPos);
         int indexOfPreviousPos = indexOfCurrentPos - 1;
         if (indexOfPreviousPos >= 0) {
-            int previousPos = mStickPositionList.get(indexOfPreviousPos);
-            return previousPos;
+            return mStickPositionList.get(indexOfPreviousPos);
         }
         return -1;
     }

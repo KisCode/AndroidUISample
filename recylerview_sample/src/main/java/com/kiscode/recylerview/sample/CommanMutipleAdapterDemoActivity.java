@@ -18,7 +18,6 @@ public class CommanMutipleAdapterDemoActivity extends AppCompatActivity {
 
     private static final int TYPE_IMAGE = 592;
     private static final int TYPE_TEXT = 595;
-    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +27,7 @@ public class CommanMutipleAdapterDemoActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        recyclerView = (RecyclerView) findViewById(R.id.recylerView_comman_mutiple);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recylerView_comman_mutiple);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

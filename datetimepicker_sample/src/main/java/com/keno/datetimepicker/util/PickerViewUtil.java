@@ -94,14 +94,13 @@ public class PickerViewUtil {
      * @param colorRes 分割线颜色
      */
     private static void setNumberPickerDividerColor(Context context, NumberPicker numberPicker, @ColorRes int colorRes) {
-        NumberPicker picker = numberPicker;
         Field[] pickerFields = NumberPicker.class.getDeclaredFields();
         for (Field pf : pickerFields) {
             if (pf.getName().equals("mSelectionDivider")) {
                 pf.setAccessible(true);
                 try {
                     //设置分割线的颜色值
-                    pf.set(picker, new ColorDrawable(ContextCompat.getColor(context, colorRes)));
+                    pf.set(numberPicker, new ColorDrawable(ContextCompat.getColor(context, colorRes)));
                 } catch (IllegalArgumentException e) {
                     e.printStackTrace();
                 } catch (Resources.NotFoundException e) {

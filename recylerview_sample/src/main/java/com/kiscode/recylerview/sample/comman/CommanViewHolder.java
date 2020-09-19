@@ -44,8 +44,7 @@ public class CommanViewHolder extends RecyclerView.ViewHolder {
 
     public static CommanViewHolder get(Context context, @NonNull ViewGroup parent, @LayoutRes int layoutId) {
         View itemView = LayoutInflater.from(context).inflate(layoutId, parent, false);
-        CommanViewHolder commanViewHolder = new CommanViewHolder(context, itemView);
-        return commanViewHolder;
+        return new CommanViewHolder(context, itemView);
     }
 
     /**
