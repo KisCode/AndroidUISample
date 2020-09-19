@@ -8,8 +8,8 @@
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_checked="true" android:color="@color/colorCheck"></item>
-    <item android:state_checked="false" android:color="@color/colorNormal"></item>
+    <item android:state_checked="true" android:color="@color/colorCheck"/>
+    <item android:state_checked="false" android:color="@color/colorNormal"/>
 </selector>
 ```
 2. xml 布局中textColor中指定即可生效

@@ -59,42 +59,4 @@ public class ScreenUtil {
         return mRealSizes[orientation].y;
     }
 
-
-    private volatile static boolean mHasCheckAllScreen;
-    private volatile static boolean mIsAllScreenDevice;
-
-    /***
-     * 是否是全面屏
-     * @param context
-     * @return
-     */
-    public static boolean isAllScreenDevice(Context context) {
-        if (mHasCheckAllScreen) {
-            return mIsAllScreenDevice;
-        }
-        mHasCheckAllScreen = true;
-        mIsAllScreenDevice = false;
-        // 低于 API 21的，都不会是全面屏。。。
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-            return false;
-        }
-        WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-        if (windowManager != null) {
-            Display display = windowManager.getDefaultDisplay();
-            Point point = new Point();
-            display.getRealSize(point);
-            float width, height;
-            if (point.x < point.y) {
-                width = point.x;
-                height = point.y;
-            } else {
-                width = point.y;
-                height = point.x;
-            }
-            if (height / width >= 1.97f) {
-                mIsAllScreenDevice = true;
-            }
-        }
-        return mIsAllScreenDevice;
-    }
 }

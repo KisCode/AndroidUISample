@@ -70,7 +70,7 @@ public class PickerViewUtil {
      */
     private static List<NumberPicker> findNumberPicker(ViewGroup viewGroup) {
         List<NumberPicker> numberPickerList = new ArrayList<>();
-        View child = null;
+        View child;
         if (null != viewGroup) {
             for (int i = 0; i < viewGroup.getChildCount(); i++) {
                 child = viewGroup.getChildAt(i);

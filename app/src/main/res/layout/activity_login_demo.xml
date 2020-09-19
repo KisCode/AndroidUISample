@@ -58,10 +58,10 @@
         android:layout_height="25dp"
         android:layout_marginStart="8dp"
         android:src="@mipmap/icon_user"
-        android:tint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="@id/view_username"
         app:layout_constraintLeft_toLeftOf="@id/view_username"
-        app:layout_constraintTop_toTopOf="@id/view_username" />
+        app:layout_constraintTop_toTopOf="@id/view_username"
+        app:tint="@color/colorPrimary" />
 
     <ImageView
         android:id="@+id/iv_password"
