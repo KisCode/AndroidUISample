@@ -73,7 +73,7 @@ public class MutipleTypeViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         }
     }
 
-    private class TextViewHolder extends RecyclerView.ViewHolder {
+    private static class TextViewHolder extends RecyclerView.ViewHolder {
         TextView tvText;
 
         public TextViewHolder(@NonNull View itemView) {
@@ -82,7 +82,7 @@ public class MutipleTypeViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         }
     }
 
-    private class ImageViewHolder extends RecyclerView.ViewHolder {
+    private static class ImageViewHolder extends RecyclerView.ViewHolder {
         private ImageView imageView;
         private TextView tvPos;
 

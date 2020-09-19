@@ -127,7 +127,7 @@ public class HomeRecylerViewActivity extends AppCompatActivity {
             return mDatas.size();
         }
 
-        private class MyHomeViewHolder extends RecyclerView.ViewHolder {
+        private static class MyHomeViewHolder extends RecyclerView.ViewHolder {
             TextView tvText;
 
             public MyHomeViewHolder(@NonNull View itemView) {

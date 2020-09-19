@@ -53,7 +53,7 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.GridViewHolder
         return mDatas.size();
     }
 
-    class GridViewHolder extends RecyclerView.ViewHolder {
+    static class GridViewHolder extends RecyclerView.ViewHolder {
         TextView tvText;
 
         public GridViewHolder(@NonNull View itemView) {
