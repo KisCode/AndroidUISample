@@ -5,8 +5,6 @@ import android.os.Debug;
 import android.util.Log;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Description:应用启动优化App

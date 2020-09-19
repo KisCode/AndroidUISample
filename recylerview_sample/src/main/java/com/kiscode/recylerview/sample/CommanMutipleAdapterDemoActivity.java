@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.kiscode.recylerview.sample.adapter.MutipleTypeViewAdapter;
 import com.kiscode.recylerview.sample.comman.CommanMutipleAdapter;
 import com.kiscode.recylerview.sample.comman.CommanViewHolder;
 import com.kiscode.recylerview.sample.comman.MutipleItemSupport;
@@ -19,7 +18,6 @@ public class CommanMutipleAdapterDemoActivity extends AppCompatActivity {
 
     private static final int TYPE_IMAGE = 592;
     private static final int TYPE_TEXT = 595;
-    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +27,7 @@ public class CommanMutipleAdapterDemoActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        recyclerView = (RecyclerView) findViewById(R.id.recylerView_comman_mutiple);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recylerView_comman_mutiple);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

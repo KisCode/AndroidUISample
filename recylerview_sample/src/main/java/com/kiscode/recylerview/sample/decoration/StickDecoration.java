@@ -106,8 +106,7 @@ public class StickDecoration extends RecyclerView.ItemDecoration {
         int indexOfCurrentPos = mStickItemPositionList.indexOf(mCurrentStickPos);
         int indexOfPreviousPos = indexOfCurrentPos - 1;
         if (indexOfPreviousPos >= 0) {
-            int previousPos = mStickItemPositionList.get(indexOfPreviousPos);
-            return previousPos;
+            return mStickItemPositionList.get(indexOfPreviousPos);
 //            return parent.getChildAt(previousPos - firsrt);
         }
         return -1;
@@ -120,9 +119,8 @@ public class StickDecoration extends RecyclerView.ItemDecoration {
         int indexOfNextPos = indexOfCurrentPos + 1;
 
         if (indexOfNextPos < mStickItemPositionList.size()) {
-            int nextPos = mStickItemPositionList.get(indexOfNextPos);
-//            return parent.getChildAt(nextPos - firsrt);
-            return nextPos;
+            //            return parent.getChildAt(nextPos - firsrt);
+            return mStickItemPositionList.get(indexOfNextPos);
         }
 
         return -1;

@@ -5,7 +5,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -75,7 +74,7 @@ public class MutipleTypeViewStickAdapter extends RecyclerView.Adapter<RecyclerVi
         }
     }
 
-    private class TextViewHolder extends RecyclerView.ViewHolder {
+    private static class TextViewHolder extends RecyclerView.ViewHolder {
         TextView tvText;
 
         public TextViewHolder(@NonNull View itemView) {
@@ -84,7 +83,7 @@ public class MutipleTypeViewStickAdapter extends RecyclerView.Adapter<RecyclerVi
         }
     }
 
-    private class HeadViewHolder extends RecyclerView.ViewHolder {
+    private static class HeadViewHolder extends RecyclerView.ViewHolder {
         private TextView tvHead;
 
         public HeadViewHolder(@NonNull View itemView) {

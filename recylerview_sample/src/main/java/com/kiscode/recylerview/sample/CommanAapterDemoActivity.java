@@ -19,8 +19,6 @@ import com.kiscode.recylerview.sample.mock.MockApi;
 
 public class CommanAapterDemoActivity extends AppCompatActivity {
 
-    private RecyclerView recylerViewComman;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +27,7 @@ public class CommanAapterDemoActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        recylerViewComman = (RecyclerView) findViewById(R.id.recylerView_comman);
+        RecyclerView recylerViewComman = (RecyclerView) findViewById(R.id.recylerView_comman);
         recylerViewComman.setLayoutManager(new LinearLayoutManager(this));
 
         recylerViewComman.setAdapter(new CommanAdapter<String>(this, MockApi.getMockDatas(), R.layout.item_text_layout) {

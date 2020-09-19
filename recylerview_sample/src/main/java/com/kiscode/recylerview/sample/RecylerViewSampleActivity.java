@@ -104,9 +104,8 @@ public class RecylerViewSampleActivity extends AppCompatActivity {
         @Override
         public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             //显示item_layout根布局样式
-            MyViewHolder viewHolder = new MyViewHolder(LayoutInflater.from(RecylerViewSampleActivity.this).inflate(R.layout.item_text_layout, parent, false));
-//            MyViewHolder viewHolder = new MyViewHolder(LayoutInflater.from(RecylerViewSampleActivity.this).inflate(R.layout.item_text_layout, null));
-            return viewHolder;
+            //            MyViewHolder viewHolder = new MyViewHolder(LayoutInflater.from(RecylerViewSampleActivity.this).inflate(R.layout.item_text_layout, null));
+            return new MyViewHolder(LayoutInflater.from(RecylerViewSampleActivity.this).inflate(R.layout.item_text_layout, parent, false));
         }
 
         @Override

@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StickHeaderRecylerViewActivity"></activity>
+        <activity android:name=".StickHeaderRecylerViewActivity" />
         <activity android:name=".CommanMutipleAdapterDemoActivity" />
         <activity android:name=".CommanAapterDemoActivity" />
         <activity android:name=".MutipleTypeViewRecyclerActivity" />
@@ -20,7 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RecylerViewSampleActivity"></activity>
+        <activity android:name=".RecylerViewSampleActivity" />
     </application>
 
 </manifest>

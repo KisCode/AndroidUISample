@@ -15,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.keno.dialogfragment.sample.fragment.ConfirtAlertDialogFragment;
 import com.keno.dialogfragment.sample.fragment.CustomSizeDialogFragment;
 import com.keno.dialogfragment.sample.fragment.EditDialogFragment;
-import com.keno.dialogfragment.sample.util.ScreenUtil;
 
 /**
  * Description:

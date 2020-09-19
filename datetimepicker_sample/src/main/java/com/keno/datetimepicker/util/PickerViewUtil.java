@@ -70,7 +70,7 @@ public class PickerViewUtil {
      */
     private static List<NumberPicker> findNumberPicker(ViewGroup viewGroup) {
         List<NumberPicker> numberPickerList = new ArrayList<>();
-        View child = null;
+        View child;
         if (null != viewGroup) {
             for (int i = 0; i < viewGroup.getChildCount(); i++) {
                 child = viewGroup.getChildAt(i);
@@ -94,19 +94,14 @@ public class PickerViewUtil {
      * @param colorRes 分割线颜色
      */
     private static void setNumberPickerDividerColor(Context context, NumberPicker numberPicker, @ColorRes int colorRes) {
-        NumberPicker picker = numberPicker;
         Field[] pickerFields = NumberPicker.class.getDeclaredFields();
         for (Field pf : pickerFields) {
             if (pf.getName().equals("mSelectionDivider")) {
                 pf.setAccessible(true);
                 try {
                     //设置分割线的颜色值
-                    pf.set(picker, new ColorDrawable(ContextCompat.getColor(context, colorRes)));
-                } catch (IllegalArgumentException e) {
-                    e.printStackTrace();
-                } catch (Resources.NotFoundException e) {
-                    e.printStackTrace();
-                } catch (IllegalAccessException e) {
+                    pf.set(numberPicker, new ColorDrawable(ContextCompat.getColor(context, colorRes)));
+                } catch (IllegalArgumentException | Resources.NotFoundException | IllegalAccessException e) {
                     e.printStackTrace();
                 }
                 break;

@@ -17,7 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginDemoActivity"></activity>
+        <activity android:name=".LoginDemoActivity" />
         <activity android:name=".constraint.GuidLineActivity" />
         <activity android:name=".constraint.ChainActivity" />
         <activity android:name=".constraint.PercentActivity" />

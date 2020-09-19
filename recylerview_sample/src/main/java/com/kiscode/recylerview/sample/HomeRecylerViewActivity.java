@@ -8,15 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.kiscode.recylerview.sample.adapter.MutipleTypeViewAdapter;
 
 import java.util.Arrays;
 import java.util.List;
@@ -100,8 +97,7 @@ public class HomeRecylerViewActivity extends AppCompatActivity {
         @NonNull
         @Override
         public MyHomeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            MyHomeViewHolder homeViewHolder = new MyHomeViewHolder(LayoutInflater.from(context).inflate(R.layout.item_text_layout, parent, false));
-            return homeViewHolder;
+            return new MyHomeViewHolder(LayoutInflater.from(context).inflate(R.layout.item_text_layout, parent, false));
         }
 
         @Override
@@ -131,7 +127,7 @@ public class HomeRecylerViewActivity extends AppCompatActivity {
             return mDatas.size();
         }
 
-        private class MyHomeViewHolder extends RecyclerView.ViewHolder {
+        private static class MyHomeViewHolder extends RecyclerView.ViewHolder {
             TextView tvText;
 
             public MyHomeViewHolder(@NonNull View itemView) {

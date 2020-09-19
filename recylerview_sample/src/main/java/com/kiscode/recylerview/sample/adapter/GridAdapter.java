@@ -40,8 +40,7 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.GridViewHolder
 
     public GridViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.item_text_layout, parent, false);
-        GridViewHolder viewHolder = new GridViewHolder(view);
-        return viewHolder;
+        return new GridViewHolder(view);
     }
 
     @Override
@@ -54,7 +53,7 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.GridViewHolder
         return mDatas.size();
     }
 
-    class GridViewHolder extends RecyclerView.ViewHolder {
+    static class GridViewHolder extends RecyclerView.ViewHolder {
         TextView tvText;
 
         public GridViewHolder(@NonNull View itemView) {

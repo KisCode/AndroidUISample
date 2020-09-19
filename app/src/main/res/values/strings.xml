@@ -2,7 +2,7 @@
     <string name="app_name">AndroidUISample</string>
     <string name="tips_info">Android UI Sample Summary.</string>
     <string name="btn_relative_positioning">Relative positioning</string>
-    <string name="btn_margin">Maigin</string>
+    <string name="btn_margin">Margin</string>
     <string name="title_activity_login">Sign in</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

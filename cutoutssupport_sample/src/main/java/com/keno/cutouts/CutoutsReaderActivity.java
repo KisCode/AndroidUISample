@@ -29,7 +29,6 @@ import java.util.List;
 public class CutoutsReaderActivity extends AppCompatActivity {
 
     private ScrollView scrollView;
-    private TextView tvContent;
     private TextView tvTitle;
 
     public static void start(Context context) {
@@ -55,15 +54,9 @@ public class CutoutsReaderActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-    }
-
     private void initView() {
         scrollView = findViewById(R.id.scrollview_reader);
-        tvContent = findViewById(R.id.tv_content_reader);
+        TextView tvContent = findViewById(R.id.tv_content_reader);
         tvTitle = findViewById(R.id.tv_title_reader);
     }
 

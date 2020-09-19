@@ -13,11 +13,6 @@ import keno.android.ui.sample.constraint.RelaytivePositionActivity;
 
 public class ConstraintLayoutDemoActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btnRelativePosition;
-    private Button btnMarginGone;
-    private Button btnCenterAndBias;
-    private Button btnPercent;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,14 +21,14 @@ public class ConstraintLayoutDemoActivity extends AppCompatActivity implements V
     }
 
     private void initView() {
-        btnRelativePosition = findViewById(R.id.btn_relative_position);
-        btnMarginGone = findViewById(R.id.btn_margin_gone);
+        Button btnRelativePosition = findViewById(R.id.btn_relative_position);
+        Button btnMarginGone = findViewById(R.id.btn_margin_gone);
 
         btnRelativePosition.setOnClickListener(this);
         btnMarginGone.setOnClickListener(this);
-        btnCenterAndBias = (Button) findViewById(R.id.btn_center_and_bias);
+        Button btnCenterAndBias = (Button) findViewById(R.id.btn_center_and_bias);
         btnCenterAndBias.setOnClickListener(this);
-        btnPercent = (Button) findViewById(R.id.btn_percent);
+        Button btnPercent = (Button) findViewById(R.id.btn_percent);
         btnPercent.setOnClickListener(this);
     }
 
