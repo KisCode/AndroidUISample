@@ -4,6 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="12dp"
-    android:textSize="24sp"
+    android:textSize="20sp"
     android:background="@color/colorPrimary"
     android:textColor="@android:color/white" />

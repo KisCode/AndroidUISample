@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:showText="true"/>
+
+    <Switch
+        android:id="@+id/switch_permission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:track="@null"
+        android:thumb="@drawable/selector_bg_switch"
+        />
+    <androidx.appcompat.widget.SwitchCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:longClickable="false"
+        android:textColor="@color/white"
+        app:showText="true"
+        app:switchTextAppearance="@style/SwitchCompat.Text"
+        app:theme="@style/SwitchCompat.Control"
+        />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:showText="true"
+        app:switchTextAppearance="@style/SwitchCompat.Text"
+        app:theme="@style/SwitchCompat.Control"/>
+
+<!--    自定义开关控件-->
+    <ToggleButton
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:textOn="@null"
+        android:textOff="@null"
+        android:background="@drawable/selector_bg_toggle"/>
+</LinearLayout>
