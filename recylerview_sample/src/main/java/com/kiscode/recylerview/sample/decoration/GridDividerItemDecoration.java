@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
  */
 
 public class GridDividerItemDecoration extends RecyclerView.ItemDecoration {
-//    onDraw方法先于drawChildren
+//    onDraw方法先于drawChildren,在Canvas上绘制内容，在绘制Item之前调用
 //    onDrawOver在drawChildren之后，一般我们选择复写其中一个即可。
 //    getItemOffsets 可以通过outRect.set()为每个Item设置一定的偏移量，主要用于绘制Decorator。
 
