@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,6 +16,8 @@ import java.util.List;
 
 /**
  * Description: 通过RecyclerView.ItemDecoration实现RecylerView指定type的View次吸附在顶部
+ *
+ * <a href="https://www.jianshu.com/p/b335b620af39/">RecyclerView.ItemDecoration参考</a>.
  * Author: keno
  * CreateDate: 2020/7/12 15:45
  */
@@ -23,7 +26,7 @@ public class StickHeaderDecoration extends RecyclerView.ItemDecoration {
     /***
      * 吸附View的Type
      */
-    private int mStickViewType;
+    protected int mStickViewType;
 
     /***
      * 用于缓存吸附stickView的pos,此处position为数据源的position

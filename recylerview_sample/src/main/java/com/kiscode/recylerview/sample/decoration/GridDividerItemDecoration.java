@@ -7,18 +7,11 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-/**** @ProjectName: AndroidUISample
- * @Package: com.kiscode.recylerview.sample
- * @ClassName: GridDividerItemDecoration
- * @Description: java类作用描述
- * @Author: 作者名
- * @CreateDate: 2020/2/13 21:46
- * @UpdateUser: 更新者： 
- * @UpdateDate: 2020/2/13 21:46
- * @UpdateRemark: 更新说明： 
- * @Version: 1.0
- */
-
+/**
+* Description: 自定义分割线
+* Author: keno
+* Date : 2020/2/13 21:46
+**/
 public class GridDividerItemDecoration extends RecyclerView.ItemDecoration {
 //    onDraw方法先于drawChildren,在Canvas上绘制内容，在绘制Item之前调用
 //    onDrawOver在drawChildren之后，一般我们选择复写其中一个即可。
