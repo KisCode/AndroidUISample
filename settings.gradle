@@ -1,3 +1,4 @@
+include ':stopmocklocation_sample'
 include ':switchbutton_sample'
 include ':startoptimization_sample'
 include ':backgroudpersistent_sample'
