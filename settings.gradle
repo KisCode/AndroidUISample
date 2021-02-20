@@ -1,3 +1,4 @@
+include ':stack_viewpager_sample'
 include ':stopmocklocation_sample'
 include ':switchbutton_sample'
 include ':startoptimization_sample'
