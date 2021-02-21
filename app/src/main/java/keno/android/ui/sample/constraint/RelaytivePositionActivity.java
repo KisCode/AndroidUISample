@@ -25,3 +25,5 @@ public class RelaytivePositionActivity extends AppCompatActivity {
         context.startActivity(starter);
     }
 }
+
+
