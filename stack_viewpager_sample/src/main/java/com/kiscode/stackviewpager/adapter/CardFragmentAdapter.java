@@ -22,7 +22,7 @@ public class CardFragmentAdapter extends FragmentPagerAdapter {
 
     @SuppressLint("WrongConstant")
     public CardFragmentAdapter(@NonNull FragmentManager fm, List<String> mDatas) {
-        super(fm);
+        super(fm,FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         this.mDatas = mDatas;
     }
 

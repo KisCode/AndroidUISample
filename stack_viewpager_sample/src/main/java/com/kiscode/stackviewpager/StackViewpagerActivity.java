@@ -2,7 +2,9 @@ package com.kiscode.stackviewpager;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +24,7 @@ public class StackViewpagerActivity extends AppCompatActivity {
 
     private static final int SIZE_OFFSET = 40;
     private ViewPager viewPager;
+    private float actionDownX, actionDownY;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +52,7 @@ public class StackViewpagerActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                Log.i(TAG,"position:"+position);
+                Log.i(TAG, "position:" + position);
             }
 
             @Override
@@ -78,6 +81,32 @@ public class StackViewpagerActivity extends AppCompatActivity {
                 }
 
                 Log.i("transformPage", "position:" + position);
+            }
+        });
+
+        viewPager.setOnTouchListener((v, event) -> {
+            if (viewPager.getCurrentItem() < contentArr.length - 1) {
+                return false;
+            }
+
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                actionDownX = event.getX();
+                actionDownY = event.getY();
+            } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                if (actionDownX - event.getX() > 50) { //向左滑
+                    Log.i(TAG, actionDownX + "\t" + actionDownY + "\tevent:\tx = " + event.getX() + ", y = " + event.getY());
+                    Toast.makeText(StackViewpagerActivity.this, "Detect left scroll...", Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+            }
+            return false;
+        });
+
+
+        viewPager.setOnGenericMotionListener(new View.OnGenericMotionListener() {
+            @Override
+            public boolean onGenericMotion(View v, MotionEvent event) {
+                return false;
             }
         });
     }
