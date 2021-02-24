@@ -2,7 +2,9 @@ package com.kiscode.stackviewpager;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +12,10 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.kiscode.stackviewpager.adapter.CardFragmentAdapter;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 
 /**
  * Description:
@@ -19,9 +24,12 @@ import java.util.Arrays;
  **/
 public class StackViewpagerActivity extends AppCompatActivity {
     private static final String TAG = "StackViewpager";
-
     private static final int SIZE_OFFSET = 40;
+    final String[] contentArr = {"One", "Two", "Three", "Four", "Five", "Six"};
+    private boolean mIsRandom = true;
+    private float actionDownX, actionDownY;
     private ViewPager viewPager;
+    private CardFragmentAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +44,10 @@ public class StackViewpagerActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        String[] contentArr = {"One", "Two", "Three", "Four", "Five", "Six"};
         viewPager = findViewById(R.id.viewpager_stack);
         viewPager.setOffscreenPageLimit(5);
-        viewPager.setAdapter(new CardFragmentAdapter(getSupportFragmentManager(), Arrays.asList(contentArr)));
+        adapter = new CardFragmentAdapter(getSupportFragmentManager(), Arrays.asList(contentArr));
+        viewPager.setAdapter(adapter);
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -49,7 +57,7 @@ public class StackViewpagerActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                Log.i(TAG,"position:"+position);
+                Log.i(TAG, "position:" + position);
             }
 
             @Override
@@ -69,16 +77,64 @@ public class StackViewpagerActivity extends AppCompatActivity {
                 } else {
                     //设置每个View在中间，即设置相对原位置偏移量
                     page.setTranslationX((-page.getWidth() * position));
-                    //缩放比例
-                    float scale = (page.getWidth() - SIZE_OFFSET * position) / (float) page.getWidth();
-                    page.setScaleX(scale);
-                    page.setScaleY(scale);
-
                     page.setTranslationY(SIZE_OFFSET * position);
+
+                    if (page.getWidth() > 0) {
+                        //缩放比例
+                        float scale = (page.getWidth() - SIZE_OFFSET * position) / (float) page.getWidth();
+
+                        Log.i("transformPageScale", "scale:" + scale + "\tposition:" + position + "\tpage.getWidth()\t" + page.getWidth());
+                        page.setScaleX(scale);
+                        page.setScaleY(scale);
+                    }
+
                 }
 
                 Log.i("transformPage", "position:" + position);
             }
         });
+
+        viewPager.setOnTouchListener((v, event) -> {
+            if (viewPager.getCurrentItem() < adapter.getCount() - 1) {
+                return false;
+            }
+
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                actionDownX = event.getX();
+                actionDownY = event.getY();
+            } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                if (actionDownX - event.getX() > 50) { //向左滑
+                    Log.i(TAG, actionDownX + "\t" + actionDownY + "\tevent:\tx = " + event.getX() + ", y = " + event.getY());
+//                    Toast.makeText(StackViewpagerActivity.this, "Detect left scroll...", Toast.LENGTH_SHORT).show();
+                    reloadData();
+                    return true;
+                }
+            }
+            return false;
+        });
+
+        viewPager.setOnGenericMotionListener(new View.OnGenericMotionListener() {
+            @Override
+            public boolean onGenericMotion(View v, MotionEvent event) {
+                return false;
+            }
+        });
+    }
+
+    private void reloadData() {
+        List<String> list = new ArrayList<>();
+        if (mIsRandom) {
+            int startNum = new Random().nextInt(90);
+            for (int i = startNum; i < startNum + 6; i++) {
+                list.add(String.valueOf(i));
+            }
+            mIsRandom = false;
+        } else {
+            list = Arrays.asList(contentArr);
+            mIsRandom = true;
+        }
+
+        adapter.setNewDatas(list);
+        viewPager.setCurrentItem(0);
     }
 }
