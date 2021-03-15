@@ -1,4 +1,4 @@
-package com.kiscode.stackviewpager;
+package com.kiscode.stackviewpager.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,9 +10,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.kiscode.stackviewpager.R;
+
 /**
  * Description:
- * Author: kanjianxiong
+ * Author: keno
  * Date : 2021/2/20 14:03
  **/
 public class CardFragmnet extends Fragment {

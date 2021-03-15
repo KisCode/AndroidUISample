@@ -10,7 +10,7 @@ import java.io.File;
  * Description:应用启动优化App
  * 1.adb命令号查看启动耗时： adb shell am start -S -W demo.kiscode.start.opt/demo.kiscode.start.opt.StartOptMainActivity
  * 2.通过Debug.startMethodTracing 追踪指定方法块执行耗时
- * Author: kanjianxiong
+ * Author: keno
  * Date : 2020/9/9 11:35
  **/
 public class OptApplication extends Application {

@@ -8,13 +8,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.kiscode.stackviewpager.CardFragmnet;
+import com.kiscode.stackviewpager.fragment.CardFragmnet;
 
 import java.util.List;
 
 /**
  * Description:
- * Author: kanjianxiong
+ * Author: keno
  * Date : 2021/2/20 14:02
  **/
 //public class CardFragmentAdapter extends FragmentPagerAdapter {

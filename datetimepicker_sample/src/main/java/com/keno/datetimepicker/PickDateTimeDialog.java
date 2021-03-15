@@ -24,7 +24,7 @@ import java.util.Calendar;
 
 /**
  * Description: 包含 日期+时间的时间选择滚轮控件
- * Author: kanjianxiong
+ * Author: keno
  * Date : 2020/7/23 16:54
  **/
 public class PickDateTimeDialog extends DialogFragment implements View.OnClickListener {
