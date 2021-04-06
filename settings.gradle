@@ -1,3 +1,4 @@
+include ':toolbar_sample'
 include ':activity_sample'
 include ':app', ':radionbuttonsample', ':dialogfragment_sample', ':recylerview_sample'
 include ':stack_viewpager_sample'
