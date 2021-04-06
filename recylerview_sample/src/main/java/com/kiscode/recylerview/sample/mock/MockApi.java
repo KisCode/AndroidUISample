@@ -1,6 +1,16 @@
 package com.kiscode.recylerview.sample.mock;
 
 
+import android.content.Context;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.kiscode.recylerview.sample.model.Automobile;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,5 +39,26 @@ public class MockApi {
             datas.add("No. " + i);
         }
         return datas;
+    }
+
+    public static List<Automobile> getMockAutoMobile(Context context) {
+        try {
+            InputStream inputStream = context.getAssets().open("automobile.json");
+            StringBuilder sb = new StringBuilder();
+            String line;
+
+            BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
+            while ((line = br.readLine()) != null) {
+                sb.append(line);
+            }
+
+            Gson gson = new Gson();
+            return gson.fromJson(sb.toString(), new TypeToken<List<Automobile>>() {
+            }.getType());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+
     }
 }
