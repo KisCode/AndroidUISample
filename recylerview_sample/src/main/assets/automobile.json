@@ -1,0 +1,163 @@
+[
+  {
+    "id": "20",
+    "name": "奥迪",
+    "fullname": "Audi",
+    "depth": "2"
+  },
+  {
+    "id": "220",
+    "name": "A3",
+    "fullname": "奥迪A3",
+    "logo": "http://api.jisuapi.com/car/static/images/logo/300/220.jpg",
+    "salestate": "在销",
+    "depth": "3"
+  },
+  {
+    "id": "221",
+    "name": "A4L",
+    "fullname": "奥迪A4L",
+    "logo": "http://api.jisuapi.com/car/static/images/logo/300/221.jpg",
+    "salestate": "在销",
+    "depth": "3"
+  },
+  {
+    "id": "222",
+    "name": "A6L",
+    "fullname": "奥迪A6L",
+    "logo": "http://api.jisuapi.com/car/static/images/logo/300/222.jpg",
+    "salestate": "在销",
+    "depth": "3"
+  },
+  {
+    "id": "223",
+    "name": "Q3",
+    "fullname": "奥迪Q3",
+    "logo": "http://api.jisuapi.com/car/static/images/logo/300/223.jpg",
+    "salestate": "在销",
+    "depth": "3"
+  },
+  {
+    "id": "224",
+    "name": "Q5",
+    "fullname": "奥迪Q5",
+    "logo": "http://api.jisuapi.com/car/static/images/logo/300/224.jpg",
+    "salestate": "在销",
+    "depth": "3"
+  },
+  {
+    "id": "225",
+    "name": "A4",
+    "fullname": "奥迪A4",
+    "logo": "http://api.jisuapi.com/car/static/images/logo/300/225.jpg",
+    "salestate": "停销",
+    "depth": "3"
+  },
+  {
+    "id": "232",
+    "name": "A4",
+    "fullname": "奥迪A4(进口)",
+    "logo": "http://api.jisuapi.com/car/static/images/logo/300/232.jpg",
+    "salestate": "待销",
+    "depth": "3"
+  },
+  {
+    "id": "233",
+    "name": "A4 allroad",
+    "fullname": "奥迪A4 allroad",
+    "logo": "http://api.jisuapi.com/car/static/images/logo/300/233.jpg",
+    "salestate": "在销",
+    "depth": "3"
+  },
+  {
+    "id": "234",
+    "name": "A5",
+    "fullname": "奥迪A5(进口)",
+    "logo": "http://api.jisuapi.com/car/static/images/logo/300/234.jpg",
+    "salestate": "在销",
+    "depth": "3"
+  },
+  {
+    "id": "40",
+    "name": "别克",
+    "fullname": "Builk",
+    "depth": "2"
+  },
+  {
+    "id": "420",
+    "name": "英朗",
+    "fullname": "英朗",
+    "logo": "http://api.jisuapi.com/car/static/images/logo/300/220.jpg",
+    "salestate": "在销",
+    "depth": "3"
+  },
+  {
+    "id": "421",
+    "name": "GL8",
+    "fullname": "别克GL8",
+    "logo": "http://api.jisuapi.com/car/static/images/logo/300/221.jpg",
+    "salestate": "在销",
+    "depth": "3"
+  },
+  {
+    "id": "422",
+    "name": "Salt",
+    "fullname": "别克赛欧",
+    "logo": "http://api.jisuapi.com/car/static/images/logo/300/222.jpg",
+    "salestate": "在销",
+    "depth": "3"
+  },{
+  "id": "423",
+  "name": "LaCROSS",
+  "fullname": "别克君越",
+  "logo": "http://api.jisuapi.com/car/static/images/logo/300/220.jpg",
+  "salestate": "在销",
+  "depth": "3"
+},
+  {
+    "id": "424",
+    "name": "Park Anvenue",
+    "fullname": "别克林荫大道",
+    "logo": "http://api.jisuapi.com/car/static/images/logo/300/221.jpg",
+    "salestate": "在销",
+    "depth": "3"
+  },
+  {
+    "id": "425",
+    "name": "Excelle",
+    "fullname": "别克凯越",
+    "logo": "http://api.jisuapi.com/car/static/images/logo/300/222.jpg",
+    "salestate": "在销",
+    "depth": "3"
+  },
+  {
+    "id": "30",
+    "name": "大众",
+    "fullname": "volkswagen",
+    "depth": "2"
+  },
+  {
+    "id": "320",
+    "name": "T-Cross",
+    "fullname": "T-Cross",
+    "logo": "http://api.jisuapi.com/car/static/images/logo/300/220.jpg",
+    "salestate": "在销",
+    "depth": "3"
+  },
+  {
+    "id": "321",
+    "name": "途岳",
+    "fullname": "途岳",
+    "logo": "http://api.jisuapi.com/car/static/images/logo/300/221.jpg",
+    "salestate": "在销",
+    "depth": "3"
+  },
+  {
+    "id": "322",
+    "name": "桑塔纳",
+    "fullname": "桑塔纳",
+    "logo": "http://api.jisuapi.com/car/static/images/logo/300/222.jpg",
+    "salestate": "在销",
+    "depth": "3"
+  }
+]
