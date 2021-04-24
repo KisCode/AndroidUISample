@@ -34,7 +34,6 @@ public class StackViewpagerFragment extends Fragment implements GestureDetector.
     private static final int SIZE_OFFSET = 30;
     final String[] contentArr = {"壹", "贰", "叁", "肆"};
     private boolean mIsRandom = true;
-    private float actionDownX, actionDownY;
     private ViewPager viewPager;
     private CardFragmentAdapter adapter;
 
@@ -127,6 +126,11 @@ public class StackViewpagerFragment extends Fragment implements GestureDetector.
         if (mIsRandom) {
             int startNum = new Random().nextInt(90);
             for (int i = startNum; i < startNum + 4; i++) {
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 StringBuffer sb = new StringBuffer();
                 for (int k = 0; k < 50; k++) {
                     sb.append(i);
@@ -145,8 +149,6 @@ public class StackViewpagerFragment extends Fragment implements GestureDetector.
     @Override
     public boolean onDown(MotionEvent e) {
         Log.e(TAG, e.getX() + "\te.getY() = " + e.getY());
-        actionDownX = e.getX();
-        actionDownY = e.getY();
         return false;
     }
 
@@ -179,6 +181,7 @@ public class StackViewpagerFragment extends Fragment implements GestureDetector.
 
         if (Math.abs(e1.getX() - e2.getX()) > Math.abs(e1.getY() - e2.getY())
                 && e1.getX() - e2.getX() > 30) {
+            Log.i(TAG, "reloadData ") ;
             reloadData();
             return true;
         }
