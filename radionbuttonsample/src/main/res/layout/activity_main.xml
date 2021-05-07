@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RadioButtonActivity">
-
     <RadioGroup
+        android:id="@+id/radioGourp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorBackground"
@@ -42,6 +42,18 @@
             android:textColor="@color/selector_radion_button_text"
             android:theme="@style/style_radio_button"
             android:textSize="16sp" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radioGourp2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/radionBackground"
+        android:layout_marginTop="12dp"
+        android:padding="12dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGourp">
     </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
