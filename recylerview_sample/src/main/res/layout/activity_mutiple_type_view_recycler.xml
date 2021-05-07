@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/recylerView_mutiple"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MutipleTypeViewRecyclerActivity" />
+    tools:context=".MutipleTypeViewRecyclerActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:gravity="center"
+        android:text="Head"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/colorAccent"/>
+
+<!--  如果RecyclerView不是铺满屏幕，需设置底部约束条件 才能保障 item显示完整  -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recylerView_mutiple"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/head"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
