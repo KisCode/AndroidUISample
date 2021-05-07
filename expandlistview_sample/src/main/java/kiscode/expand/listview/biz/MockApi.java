@@ -1,36 +1,17 @@
-package kiscode.expand.listview;
-
-import android.os.Bundle;
-import android.widget.ExpandableListView;
-
-import androidx.appcompat.app.AppCompatActivity;
+package kiscode.expand.listview.biz;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import kiscode.expand.listview.model.ExamItem;
 
-public class MainActivity extends AppCompatActivity {
-    private ExpandableListView expandableListView;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        List<ExamItem> examItemList = loadMockData();
-        expandableListView = findViewById(R.id.expand_listview);
-        ExamExpandAdapter adapter = new ExamExpandAdapter(examItemList);
-        expandableListView.setAdapter(adapter);
-        for (int i = 0; i < adapter.getGroupCount(); i++) {
-            expandableListView.expandGroup(i);
-        }
-
-        // 禁止收缩
-        expandableListView.setOnGroupClickListener((parent, v, groupPosition, id) -> true);
-    }
-
-    public List<ExamItem> loadMockData() {
+/**
+ * Description:
+ * Author: kanjianxiong
+ * Date : 2021/4/14 15:05
+ **/
+public class MockApi {
+    public static List<ExamItem> loadMockData() {
         List<ExamItem> examItemList = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             ExamItem examItem = new ExamItem();
@@ -52,4 +33,4 @@ public class MainActivity extends AppCompatActivity {
 
         return examItemList;
     }
-}
+} 

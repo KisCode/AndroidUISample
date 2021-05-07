@@ -117,6 +117,5 @@ public class ExamExpandAdapter extends BaseExpandableListAdapter {
 
     static class AnwserViewHolder {
         RadioButton radioButton;
-        int pos;
     }
 }
