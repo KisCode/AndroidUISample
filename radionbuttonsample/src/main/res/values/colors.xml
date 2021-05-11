@@ -6,4 +6,6 @@
     <color name="colorBackground">#22DDCC00</color>
     <color name="colorNormal">#66000000</color>
     <color name="colorCheck">#FF00AABB</color>
+
+    <color name="radionBackground">#FF88FF</color>
 </resources>

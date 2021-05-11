@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/recylerView_mutiple"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MutipleTypeViewRecyclerActivity" />
+    android:orientation="vertical"
+    tools:context=".MutipleTypeViewRecyclerActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Head"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:background="@color/colorPrimaryDark"/>
+
+<!--  如果RecyclerView不是铺满屏幕，需设置底部约束条件 才能保障 item显示完整  -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recylerView_mutiple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

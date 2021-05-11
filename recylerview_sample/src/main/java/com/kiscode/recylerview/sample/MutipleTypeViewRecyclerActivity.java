@@ -19,7 +19,7 @@ public class MutipleTypeViewRecyclerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mutiple_type_view_recycler);
+        setContentView(R.layout.activity_mutiple_type_view_recycler2);
         initDatas();
         initView();
     }
