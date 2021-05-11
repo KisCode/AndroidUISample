@@ -17,7 +17,7 @@ import kiscode.expand.listview.model.ExamItem;
 
 /**
  * Description:
- * Author: kanjianxiong
+ * Author: keno
  * Date : 2021/4/14 14:53
  **/
 public class ExamRecyclerAdapter extends RecyclerView.Adapter<ExamRecyclerAdapter.ExamViewHolder> {
