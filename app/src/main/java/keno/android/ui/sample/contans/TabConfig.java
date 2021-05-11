@@ -12,6 +12,7 @@ public interface TabConfig {
 
     String MarginGone = "MarginGone";
     String ChainLine = "ChainLine";
+    String Align = "Align";
 
     String Bias = "Bias";
     String Circle = "Circle"; //角度约束

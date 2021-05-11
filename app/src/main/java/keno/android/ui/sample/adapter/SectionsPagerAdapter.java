@@ -1,4 +1,4 @@
-package keno.android.ui.sample.ui.main;
+package keno.android.ui.sample.adapter;
 
 import android.content.Context;
 
@@ -8,8 +8,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import keno.android.ui.sample.contans.TabConfig;
+import keno.android.ui.sample.fragment.ChainLineFragment;
 import keno.android.ui.sample.fragment.LinearLayoutFragment;
 import keno.android.ui.sample.fragment.RelativePositionFragment;
+import keno.android.ui.sample.fragment.PlaceholderFragment;
 
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
@@ -31,6 +33,10 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             case TabConfig.LinearLayout:
             case TabConfig.PercentLayout:
                 return new LinearLayoutFragment();
+            case TabConfig.ChainLine:
+                return new ChainLineFragment();
+            case TabConfig.Align:
+                return new ChainLineFragment();
             default:
                 return PlaceholderFragment.newInstance(position + 1);
         }

@@ -12,7 +12,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
 import keno.android.ui.sample.contans.TabConfig;
-import keno.android.ui.sample.ui.main.SectionsPagerAdapter;
+import keno.android.ui.sample.adapter.SectionsPagerAdapter;
 
 public class MainTabActivity extends AppCompatActivity {
 
@@ -43,6 +43,7 @@ public class MainTabActivity extends AppCompatActivity {
                 TabConfig.LinearLayout,
                 TabConfig.PercentLayout,
                 TabConfig.ChainLine,
+                TabConfig.Align,
                 TabConfig.MarginGone
         };
     }
