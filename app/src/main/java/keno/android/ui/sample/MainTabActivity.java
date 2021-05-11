@@ -44,6 +44,9 @@ public class MainTabActivity extends AppCompatActivity {
                 TabConfig.PercentLayout,
                 TabConfig.ChainLine,
                 TabConfig.Align,
+                TabConfig.Barrier,
+                TabConfig.Group,
+                TabConfig.Placeholder,
                 TabConfig.MarginGone
         };
     }
