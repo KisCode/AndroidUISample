@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndroidUISample</string>
+    <string name="app_name">UISample</string>
     <string name="tips_info">Android UI Sample Summary.</string>
     <string name="btn_relative_positioning">Relative positioning</string>
     <string name="btn_margin">Margin</string>
@@ -12,4 +12,7 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_main_tab">MainTabActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>

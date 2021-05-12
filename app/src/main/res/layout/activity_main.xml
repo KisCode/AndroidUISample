@@ -9,23 +9,29 @@
         android:orientation="vertical"
         tools:context=".MainActivity">
 
-        <TextView
+        <Button
+            android:id="@+id/btn_constraintlayout_tab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="MainActivity" />
+            android:text="基础用法示例"
+            android:layout_margin="12dp"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_constraintlayout_demo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ConstraintLayoutDemoActivity"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            android:layout_margin="12dp"
+            android:visibility="gone" />
 
         <Button
-            android:id="@+id/btn_login_demo"
+            android:id="@+id/btn_practice_demo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="LoginDemoActivity"
+            android:text="综合案例"
+            android:layout_margin="12dp"
             android:textAllCaps="false" />
     </LinearLayout>
 </ScrollView>
