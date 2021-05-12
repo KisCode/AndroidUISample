@@ -24,4 +24,10 @@ public interface TabConfig {
     String Group = "Group";
     String Placeholder = "Placeholder";
 
+
+    //综合案例
+    String Error = "错误页";
+    String Login = "登录页";
+    String Clock = "时钟效果";
+
 }

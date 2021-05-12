@@ -1,4 +1,4 @@
-package keno.android.ui.sample.fragment;
+package keno.android.ui.sample.fragment.basics;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,15 +12,15 @@ import androidx.fragment.app.Fragment;
 import keno.android.ui.sample.R;
 
 /**
- * Description: 实现LinearLayout相同效果的线性布局
+ * Description:
  * Author: keno
- * Date : 2021/5/11 22:47
+ * Date : 2021/5/11 13:55
  **/
-public class LinearLayoutFragment extends Fragment {
+public class RelativePositionFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_linearlayout, container, false);
+        View root = inflater.inflate(R.layout.fragment_relativelayout, container, false);
         return root;
     }
 }

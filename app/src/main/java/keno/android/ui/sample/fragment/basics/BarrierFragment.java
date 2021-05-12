@@ -1,4 +1,4 @@
-package keno.android.ui.sample.fragment;
+package keno.android.ui.sample.fragment.basics;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

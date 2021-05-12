@@ -1,6 +1,8 @@
 package keno.android.ui.sample;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -11,15 +13,23 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
-import keno.android.ui.sample.contans.TabConfig;
 import keno.android.ui.sample.adapter.SectionsPagerAdapter;
+import keno.android.ui.sample.contans.TabConfig;
 
 public class MainTabActivity extends AppCompatActivity {
+    private static final String KEY_TITLE_LIST = "TITLE_LIST";
+
+    public static void start(Context context, String[] titleArrs) {
+        Intent starter = new Intent(context, MainTabActivity.class);
+        starter.putExtra(KEY_TITLE_LIST, titleArrs);
+        context.startActivity(starter);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_tab);
+
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager(), getTitles());
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(sectionsPagerAdapter);
@@ -38,16 +48,12 @@ public class MainTabActivity extends AppCompatActivity {
     }
 
     private String[] getTitles() {
+        String[] titleArrs = getIntent().getStringArrayExtra(KEY_TITLE_LIST);
+        if (titleArrs != null && titleArrs.length > 0) {
+            return titleArrs;
+        }
         return new String[]{
-                TabConfig.RelativeLayout,
-                TabConfig.LinearLayout,
-                TabConfig.PercentLayout,
-                TabConfig.ChainLine,
-                TabConfig.Align,
-                TabConfig.Barrier,
-                TabConfig.Group,
-                TabConfig.Placeholder,
-                TabConfig.MarginGone
+                TabConfig.Error
         };
     }
 }

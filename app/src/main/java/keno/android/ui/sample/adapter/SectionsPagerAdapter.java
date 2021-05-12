@@ -8,14 +8,19 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import keno.android.ui.sample.contans.TabConfig;
-import keno.android.ui.sample.fragment.AlignFragment;
-import keno.android.ui.sample.fragment.BarrierFragment;
-import keno.android.ui.sample.fragment.ChainLineFragment;
-import keno.android.ui.sample.fragment.GroupFragment;
-import keno.android.ui.sample.fragment.LinearLayoutFragment;
-import keno.android.ui.sample.fragment.RelativePositionFragment;
-import keno.android.ui.sample.fragment.PlaceholderFragment;
+import keno.android.ui.sample.fragment.ErrorFragment;
 import keno.android.ui.sample.fragment.TextFragment;
+import keno.android.ui.sample.fragment.basics.AlignFragment;
+import keno.android.ui.sample.fragment.basics.BarrierFragment;
+import keno.android.ui.sample.fragment.basics.ChainLineFragment;
+import keno.android.ui.sample.fragment.basics.CircleFragment;
+import keno.android.ui.sample.fragment.basics.GroupFragment;
+import keno.android.ui.sample.fragment.basics.LinearLayoutFragment;
+import keno.android.ui.sample.fragment.basics.MarginGoneFragment;
+import keno.android.ui.sample.fragment.basics.PlaceholderFragment;
+import keno.android.ui.sample.fragment.basics.RelativePositionFragment;
+import keno.android.ui.sample.fragment.practice.ClockFragment;
+import keno.android.ui.sample.fragment.practice.LoginFragment;
 
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
@@ -37,16 +42,28 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             case TabConfig.LinearLayout:
             case TabConfig.PercentLayout:
                 return new LinearLayoutFragment();
+            case TabConfig.MarginGone:
+                return new MarginGoneFragment();
             case TabConfig.ChainLine:
                 return new ChainLineFragment();
             case TabConfig.Align:
                 return new AlignFragment();
+            case TabConfig.Circle:
+                return new CircleFragment();
             case TabConfig.Barrier:
                 return new BarrierFragment();
             case TabConfig.Group:
                 return new GroupFragment();
             case TabConfig.Placeholder:
                 return new PlaceholderFragment();
+
+            //综合页面
+            case TabConfig.Error:
+                return new ErrorFragment();
+            case TabConfig.Login:
+                return new LoginFragment();
+            case TabConfig.Clock:
+                return new ClockFragment();
             default:
                 return TextFragment.newInstance(position + 1);
         }
