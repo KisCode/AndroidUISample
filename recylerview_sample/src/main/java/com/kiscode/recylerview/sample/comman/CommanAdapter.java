@@ -2,6 +2,7 @@ package com.kiscode.recylerview.sample.comman;
 
 
 import android.content.Context;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.LayoutRes;
@@ -25,22 +26,31 @@ public abstract class CommanAdapter<T> extends RecyclerView.Adapter<CommanViewHo
 
     protected @LayoutRes
     int mLayoutRes;
+    private OnItemClickListener<T> onItemClickListener;
 
-    public CommanAdapter(Context mContext, List<T> mDatas, int mLayoutRes) {
+    public CommanAdapter(List<T> mDatas, int mLayoutRes) {
         this.mDatas = mDatas;
-        this.mContext = mContext;
         this.mLayoutRes = mLayoutRes;
     }
 
     @NonNull
     @Override
     public CommanViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        mContext = parent.getContext();
         return CommanViewHolder.get(mContext, parent, mLayoutRes);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CommanViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CommanViewHolder holder, final int position) {
         convert(holder, position);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onItemClickListener != null) {
+                    onItemClickListener.onClick(CommanAdapter.this, position);
+                }
+            }
+        });
     }
 
     @Override
@@ -48,5 +58,24 @@ public abstract class CommanAdapter<T> extends RecyclerView.Adapter<CommanViewHo
         return mDatas.size();
     }
 
+    public T getItem(int pos) {
+        return mDatas.get(pos);
+    }
+
     public abstract void convert(@NonNull CommanViewHolder holder, int pos);
+
+    public void setNewDatas(List<T> newDatas) {
+        if (newDatas != mDatas) {
+            mDatas = newDatas;
+            notifyDataSetChanged();
+        }
+    }
+
+    public void setOnItemClickListener(OnItemClickListener<T> onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
+
+    public interface OnItemClickListener<T> {
+        void onClick(CommanAdapter<T> adapter, int pos);
+    }
 }

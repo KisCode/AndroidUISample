@@ -1,6 +1,7 @@
 package com.kiscode.recylerview.sample;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,12 +30,20 @@ public class CommanAapterDemoActivity extends AppCompatActivity {
     private void initView() {
         RecyclerView recylerViewComman = (RecyclerView) findViewById(R.id.recylerView_comman);
         recylerViewComman.setLayoutManager(new LinearLayoutManager(this));
-
-        recylerViewComman.setAdapter(new CommanAdapter<String>(this, MockApi.getMockDatas(), R.layout.item_text_layout) {
+        CommanAdapter<String> commanAdapter = new CommanAdapter<String>(MockApi.getMockDatas(), R.layout.item_text_layout) {
             @Override
             public void convert(@NonNull CommanViewHolder holder, int postion) {
                 holder.setText(R.id.tv_text_item, mDatas.get(postion));
             }
+        };
+
+        commanAdapter.setOnItemClickListener(new CommanAdapter.OnItemClickListener<String>() {
+            @Override
+            public void onClick(CommanAdapter<String> adapter, int pos) {
+                Toast.makeText(CommanAapterDemoActivity.this, "click:" + adapter.getItem(pos), Toast.LENGTH_SHORT).show();
+            }
         });
+
+        recylerViewComman.setAdapter(commanAdapter);
     }
 }
