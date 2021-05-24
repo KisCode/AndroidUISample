@@ -37,12 +37,8 @@ public class CommanAapterDemoActivity extends AppCompatActivity {
             }
         };
 
-        commanAdapter.setOnItemClickListener(new CommanAdapter.OnItemClickListener<String>() {
-            @Override
-            public void onClick(CommanAdapter<String> adapter, int pos) {
-                Toast.makeText(CommanAapterDemoActivity.this, "click:" + adapter.getItem(pos), Toast.LENGTH_SHORT).show();
-            }
-        });
+        commanAdapter.setOnItemClickListener((adapter, pos) ->
+                Toast.makeText(CommanAapterDemoActivity.this, "click:" + adapter.getItem(pos), Toast.LENGTH_SHORT).show());
 
         recylerViewComman.setAdapter(commanAdapter);
     }
