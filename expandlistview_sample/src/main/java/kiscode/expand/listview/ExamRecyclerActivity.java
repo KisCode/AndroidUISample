@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import kiscode.expand.listview.adapter.ExamRecyclerAdapter;
 import kiscode.expand.listview.biz.MockApi;
 
 public class ExamRecyclerActivity extends AppCompatActivity {

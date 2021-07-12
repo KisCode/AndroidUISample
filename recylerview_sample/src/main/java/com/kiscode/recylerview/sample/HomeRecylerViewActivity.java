@@ -24,8 +24,9 @@ public class HomeRecylerViewActivity extends AppCompatActivity {
             , "MutipleTypeViewRecyclerActivity"
             , "CommanAapterDemoActivity"
             , "CommanMutipleAdapterDemoActivity"
-            ,"StickHeaderRecylerViewActivity"
-            ,"MutipleTypeGridRecyclerActivity"
+            , "StickHeaderRecylerViewActivity"
+            , "MutipleTypeGridRecyclerActivity"
+            , "CommanWithEmptyAapterDemoActivity"
     };
 
     private RecyclerView recyclerView;
@@ -82,6 +83,10 @@ public class HomeRecylerViewActivity extends AppCompatActivity {
                         // 多Type Grid类型的 RecyclerView
                         startActivity(new Intent(HomeRecylerViewActivity.this, MutipleTypeGridRecyclerActivity.class));
                         break;
+                    case 7:
+                        // EmptyView的Comman adapter
+                        startActivity(new Intent(HomeRecylerViewActivity.this, CommanWithEmptyAdapterActivity.class));
+                        break;
                 }
             }
 
@@ -98,6 +103,7 @@ public class HomeRecylerViewActivity extends AppCompatActivity {
     private static class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyHomeViewHolder> {
         private Context context;
         private List<String> mDatas;
+        private OnItemClickLitener onItemClickLitener;
 
         public MyAdapter(Context context, List<String> mDatas) {
             this.context = context;
@@ -137,13 +143,8 @@ public class HomeRecylerViewActivity extends AppCompatActivity {
             return mDatas.size();
         }
 
-        private static class MyHomeViewHolder extends RecyclerView.ViewHolder {
-            TextView tvText;
-
-            public MyHomeViewHolder(@NonNull View itemView) {
-                super(itemView);
-                tvText = itemView.findViewById(R.id.tv_text_item);
-            }
+        public void setOnItemClickLitener(OnItemClickLitener onItemClickLitener) {
+            this.onItemClickLitener = onItemClickLitener;
         }
 
         public interface OnItemClickLitener {
@@ -152,10 +153,13 @@ public class HomeRecylerViewActivity extends AppCompatActivity {
             void onItemLongClick(View view, int position);
         }
 
-        private OnItemClickLitener onItemClickLitener;
+        private static class MyHomeViewHolder extends RecyclerView.ViewHolder {
+            TextView tvText;
 
-        public void setOnItemClickLitener(OnItemClickLitener onItemClickLitener) {
-            this.onItemClickLitener = onItemClickLitener;
+            public MyHomeViewHolder(@NonNull View itemView) {
+                super(itemView);
+                tvText = itemView.findViewById(R.id.tv_text_item);
+            }
         }
     }
 

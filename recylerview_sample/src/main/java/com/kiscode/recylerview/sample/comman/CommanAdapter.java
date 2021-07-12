@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 /**
- * 通用内容适配器
- * Description:
+ *
+ * Description: 通用内容适配器
  * Author: keno
  * Date : 2020/2/16 11:05
  **/
