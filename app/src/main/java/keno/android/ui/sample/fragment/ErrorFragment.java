@@ -12,7 +12,7 @@ import keno.android.ui.sample.R;
 
 /**
 * Description: 异常页面
-* Author: kanjianxiong
+* Author: keno
 * Date : 2021/5/12 15:54
 **/
 public class ErrorFragment extends Fragment {
