@@ -23,10 +23,13 @@ public class MainActivity extends AppCompatActivity {
         List<ExamItem> examItemList = MockApi.loadMockData();
         expandableListView = findViewById(R.id.expand_listview);
         ExamExpandAdapter adapter = new ExamExpandAdapter(examItemList);
-        expandableListView.setAdapter(adapter);
-        for (int i = 0; i < adapter.getGroupCount(); i++) {
+//        expandableListView.setAdapter(adapter);
+        adapter.bindExpandableListView(expandableListView);
+
+        //展开全部节点
+/*        for (int i = 0; i < adapter.getGroupCount(); i++) {
             expandableListView.expandGroup(i);
-        }
+        }*/
         // 禁止收缩展开
 //        expandableListView.setOnGroupClickListener((parent, v, groupPosition, id) -> true);
     }
