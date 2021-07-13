@@ -28,10 +28,7 @@ public class CommanMutipleAdapterDemoActivity extends AppCompatActivity {
 
     private void initView() {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recylerView_comman_mutiple);
-
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-
         List<String> datas = MockApi.getMockDatas();
         final MutipleItemSupport mutipleItemSupport = new MutipleItemSupport<String>() {
             @Override

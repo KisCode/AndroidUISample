@@ -124,7 +124,7 @@ public class CommanViewHolder extends RecyclerView.ViewHolder {
 
     @SuppressLint("NewApi")
     public CommanViewHolder setAlpha(int viewId, float value) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getView(viewId).setAlpha(value);
         } else {
             // Pre-honeycomb hack to set Alpha value

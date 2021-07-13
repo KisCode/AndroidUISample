@@ -1,4 +1,4 @@
-package kiscode.expand.listview;
+package kiscode.expand.listview.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import kiscode.expand.listview.R;
 import kiscode.expand.listview.model.ExamItem;
 
 /**

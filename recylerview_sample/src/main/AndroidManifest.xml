@@ -12,6 +12,7 @@
         <activity android:name=".StickHeaderRecylerViewActivity" />
         <activity android:name=".CommanMutipleAdapterDemoActivity" />
         <activity android:name=".CommanAapterDemoActivity" />
+        <activity android:name=".CommanWithEmptyAdapterActivity" />
         <activity android:name=".MutipleTypeViewRecyclerActivity" />
         <activity android:name=".GridLayoutActivity" />
         <activity android:name=".MutipleTypeGridRecyclerActivity" />

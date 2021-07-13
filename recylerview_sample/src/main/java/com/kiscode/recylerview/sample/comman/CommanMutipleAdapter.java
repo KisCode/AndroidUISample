@@ -21,13 +21,14 @@ public abstract class CommanMutipleAdapter<T> extends CommanAdapter<T> {
     private MutipleItemSupport mMutipleItemSupport;
 
     public CommanMutipleAdapter(Context mContext, List<T> mDatas, MutipleItemSupport mutipleItemSupport) {
-        super(mContext, mDatas, -1);
+        super(mDatas, -1);
         this.mMutipleItemSupport = mutipleItemSupport;
     }
 
     @NonNull
     @Override
     public CommanViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        mContext = parent.getContext();
         int layout = mMutipleItemSupport.getItemLayout(viewType);
         return CommanViewHolder.get(mContext, parent, layout);
     }
