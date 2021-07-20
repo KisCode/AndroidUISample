@@ -4,6 +4,7 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
+
     defaultConfig {
         applicationId "keno.android.ui.sample"
         minSdkVersion 19
@@ -14,10 +15,22 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs{
+        release{
+            storeFile file('../androidUi.jks')
+            storePassword "zxc@1234"
+            keyAlias "androiduikey"
+            keyPassword "zxc@1234"
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            minifyEnabled true    //代码混淆
+            shrinkResources true  //无效资源文件清理
+            zipAlignEnabled true  //压缩
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'  //混淆规则
+            signingConfig signingConfigs.release
         }
     }
     compileOptions {
