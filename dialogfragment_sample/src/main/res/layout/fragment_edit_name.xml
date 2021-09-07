@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/light_blue">
     <View
         android:layout_width="wrap_content"
         android:layout_height="36dp"
@@ -22,4 +23,10 @@
         android:imeOptions="actionDone"
         android:layout_margin="8dp"
         android:inputType="text" />
+
+    <Button
+        android:id="@+id/btn_alert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Alert"/>
 </LinearLayout>

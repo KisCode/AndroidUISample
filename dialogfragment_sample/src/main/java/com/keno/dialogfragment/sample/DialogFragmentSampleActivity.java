@@ -12,12 +12,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.keno.dialogfragment.sample.fragment.ConfirtAlertDialogFragment;
+import com.keno.dialogfragment.sample.fragment.ConfirmAlertDialogFragment;
 import com.keno.dialogfragment.sample.fragment.CustomSizeDialogFragment;
 import com.keno.dialogfragment.sample.fragment.EditDialogFragment;
 
 /**
- * Description:
+ *  Description:
  * Author: keno
  * CreateDate: 2020/2/3 15:05
  * https://github.com/codepath/android_guides/wiki/Using-DialogFragment
@@ -26,8 +26,10 @@ import com.keno.dialogfragment.sample.fragment.EditDialogFragment;
  * 1. 具有和Fragment的相同的生命周期管理
  * 2. 旋转屏幕时更好的适配（如一个包含EditText输入对话框传统Dialog 输入内容后旋转屏幕后，输入内容消失，Activity销毁时不允许对话框未关闭
  * 后台崩溃日志：android.view.WindowLeaked: Activity com.keno.dialogfragment.sample.DialogFragmentSampleActivity has leaked window DecorView@54552c[] that was originally added here）
- */
-
+ *
+ * 缺点：
+ * 1.如在DialogFragment 页面内再弹出AlertDialog会出现alert被覆盖的情况，弹框必须使用DialogFragment
+ **/
 public class DialogFragmentSampleActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnShowDialog;
@@ -71,7 +73,7 @@ public class DialogFragmentSampleActivity extends AppCompatActivity implements V
                 editDialogFragment.show(getSupportFragmentManager(), "EditDialogFragment");
                 break;
             case R.id.btn_show_confirm_dialogfragment:
-                ConfirtAlertDialogFragment confirtAlertDialogFragment = new ConfirtAlertDialogFragment();
+                ConfirmAlertDialogFragment confirtAlertDialogFragment = new ConfirmAlertDialogFragment();
                 confirtAlertDialogFragment.show(getSupportFragmentManager(), "EditDialogFragment");
                 break;
             case R.id.btn_show_customsize_dialogfragment:
@@ -108,7 +110,6 @@ public class DialogFragmentSampleActivity extends AppCompatActivity implements V
     }
 
     private int getScreenHeight() {
-//        return ScreenUtil.getScreenRealHeight(this);
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         return dm.heightPixels;
