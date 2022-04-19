@@ -11,23 +11,13 @@ import androidx.fragment.app.DialogFragment;
 
 import com.keno.dialogfragment.sample.R;
 
-
-/**** @ProjectName: AndroidUISample
- * @Package: com.keno.dialogfragment.sample.fragment
- * @ClassName: EditDialogFragment
- * @Description: java类作用描述
- * @Author: 作者名
- * @CreateDate: 2020/2/3 14:45
- * @UpdateUser: 更新者： 
- * @UpdateDate: 2020/2/3 14:45
- * @UpdateRemark: 更新说明： 
- * @Version: 1.0
- */
+/**
+ * Description:
+ * Author: keno
+ * Date : 2020/2/3 14:45
+ **/
 public class EditDialogFragment extends DialogFragment {
     public EditDialogFragment() {
-        // Empty constructor is required for DialogFragment
-        // Make sure not to add arguments to the constructor
-        // Use `newInstance` instead as shown below
     }
 
     @Override
@@ -37,6 +27,7 @@ public class EditDialogFragment extends DialogFragment {
         //方式2： 设置style
         setStyle(DialogFragment.STYLE_NO_TITLE, R.style.AppDialogTheme);
     }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -51,8 +42,32 @@ public class EditDialogFragment extends DialogFragment {
         window.setAttributes(lp);*/
 
         View view = inflater.inflate(R.layout.fragment_edit_name, container);
+
         setStyle(DialogFragment.STYLE_NO_TITLE, R.style.AppDialogTheme);
         return view;
     }
 
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+/*
+        view.findViewById(R.id.btn_alert).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(requireContext())
+                        .setTitle("confirm")
+                        .setMessage("I'm Alert")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).show();
+            }
+        });
+*/
+        //如在DialogFragment 页面内再弹出AlertDialog会出现被覆盖的情况，弹框必须使用DialogFragment
+        ConfirmAlertDialogFragment confirtAlertDialogFragment = new ConfirmAlertDialogFragment();
+        confirtAlertDialogFragment.show(getChildFragmentManager(), "ConfirmAlertDialogFragment");
+    }
 }
