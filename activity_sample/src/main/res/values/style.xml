@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--对话框样式Activity-->
+    <style name="DialogActivityTheme" parent="@style/Theme.AppCompat.Dialog.Alert">
+        <item name="android:windowFrame">@android:color/transparent</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">true</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@android:color/transparent</item><!--背景透明-->
+        <item name="android:backgroundDimAmount">0.4</item><!--透明度 0.0f到1.0f之间。1.0完全不透明，0.0f完全透明-->
+        <!--<item name="android:windowAnimationStyle">@style/MyAnimationActivity</item>-->
+        <item name="android:windowCloseOnTouchOutside">false</item>  <!--禁用点击空白处自动关闭 -->
+    </style>
+</resources>

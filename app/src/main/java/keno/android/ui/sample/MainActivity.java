@@ -2,12 +2,14 @@ package keno.android.ui.sample;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import keno.android.ui.sample.contans.TabConfig;
+import keno.android.ui.sample.util.ProcessUtil;
 
 /**
  * Description:
@@ -16,6 +18,7 @@ import keno.android.ui.sample.contans.TabConfig;
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private static final String TAG = "MainActivity";
     private Button btnConstraintActivity, getBtnConstraintTab, btnLoginDemo;
 
     @Override
@@ -57,12 +60,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this, ConstraintLayoutDemoActivity.class));
                 break;
             case R.id.btn_practice_demo:
+                String currentProcessName = ProcessUtil.getCurrentProcessName();
+                Log.d(TAG, "currentProcessName:" + currentProcessName);
+                Log.d(TAG, "isMainProcess:" + currentProcessName.equals(BuildConfig.APPLICATION_ID));
                 String[] titlePracticeArrs = {
                         TabConfig.Login,
                         TabConfig.Clock,
                         TabConfig.Error
                 };
-                MainTabActivity.start(this, titlePracticeArrs);
+//                MainTabActivity.start(this, titlePracticeArrs);
                 break;
         }
     }
