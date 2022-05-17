@@ -16,7 +16,7 @@ import java.util.List;
  * Author: keno
  * Date : 2020/2/16 11:05
  **/
-public abstract class CommanAdapter<T> extends RecyclerView.Adapter<CommanViewHolder> {
+public abstract class CommonAdapter<T> extends RecyclerView.Adapter<CommonViewHolder> {
     protected List<T> mDatas;
     protected Context mContext;
 
@@ -25,22 +25,22 @@ public abstract class CommanAdapter<T> extends RecyclerView.Adapter<CommanViewHo
     private OnItemClickListener<T> onItemClickListener;
     private OnItemLongClickListener<T> onItemLongClickListener;
 
-    public CommanAdapter(List<T> mDatas, int mLayoutRes) {
+    public CommonAdapter(List<T> mDatas, int mLayoutRes) {
         this.mDatas = mDatas;
         this.mLayoutRes = mLayoutRes;
     }
 
     @NonNull
     @Override
-    public CommanViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CommonViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         mContext = parent.getContext();
-        CommanViewHolder commanViewHolder = CommanViewHolder.get(mContext, parent, mLayoutRes);
-        bindViewClickListener(commanViewHolder);
-        return commanViewHolder;
+        CommonViewHolder commonViewHolder = CommonViewHolder.get(mContext, parent, mLayoutRes);
+        bindViewClickListener(commonViewHolder);
+        return commonViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CommanViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull CommonViewHolder holder, final int position) {
         convert(holder, position);
     }
 
@@ -49,14 +49,14 @@ public abstract class CommanAdapter<T> extends RecyclerView.Adapter<CommanViewHo
         return mDatas.size();
     }
 
-    private void bindViewClickListener(final CommanViewHolder commanViewHolder) {
+    private void bindViewClickListener(final CommonViewHolder commonViewHolder) {
         if (onItemClickListener != null) {
-            commanViewHolder.itemView.setOnClickListener(v -> onItemClickListener.onClick(CommanAdapter.this, commanViewHolder.getLayoutPosition()));
+            commonViewHolder.itemView.setOnClickListener(v -> onItemClickListener.onClick(CommonAdapter.this, commonViewHolder.getLayoutPosition()));
         }
 
         if (onItemLongClickListener != null) {
-            commanViewHolder.itemView.setOnLongClickListener(v -> {
-                onItemLongClickListener.onLongClick(CommanAdapter.this, commanViewHolder.getLayoutPosition());
+            commonViewHolder.itemView.setOnLongClickListener(v -> {
+                onItemLongClickListener.onLongClick(CommonAdapter.this, commonViewHolder.getLayoutPosition());
                 return true;
             });
         }
@@ -66,7 +66,7 @@ public abstract class CommanAdapter<T> extends RecyclerView.Adapter<CommanViewHo
         return mDatas.get(pos);
     }
 
-    public abstract void convert(@NonNull CommanViewHolder holder, int pos);
+    public abstract void convert(@NonNull CommonViewHolder holder, int pos);
 
     public void setNewDatas(List<T> newDatas) {
         if (newDatas != mDatas) {
@@ -84,10 +84,10 @@ public abstract class CommanAdapter<T> extends RecyclerView.Adapter<CommanViewHo
     }
 
     public interface OnItemClickListener<T> {
-        void onClick(CommanAdapter<T> adapter, int pos);
+        void onClick(CommonAdapter<T> adapter, int pos);
     }
 
     public interface OnItemLongClickListener<T> {
-        void onLongClick(CommanAdapter<T> adapter, int pos);
+        void onLongClick(CommonAdapter<T> adapter, int pos);
     }
 }

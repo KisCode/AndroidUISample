@@ -27,6 +27,7 @@ public class HomeRecylerViewActivity extends AppCompatActivity {
             , "StickHeaderRecylerViewActivity"
             , "MutipleTypeGridRecyclerActivity"
             , "CommanWithEmptyAapterDemoActivity"
+            , "RecyclerView Linkage"
     };
 
     private RecyclerView recyclerView;
@@ -86,6 +87,10 @@ public class HomeRecylerViewActivity extends AppCompatActivity {
                     case 7:
                         // EmptyView的Comman adapter
                         startActivity(new Intent(HomeRecylerViewActivity.this, CommanWithEmptyAdapterActivity.class));
+                        break;
+                    case 8:
+                        // Recyclerview联动
+                        startActivity(new Intent(HomeRecylerViewActivity.this, LinkageRecyclerViewActivity.class));
                         break;
                 }
             }

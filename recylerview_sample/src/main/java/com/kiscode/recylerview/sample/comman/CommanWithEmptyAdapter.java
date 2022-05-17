@@ -17,7 +17,7 @@ import java.util.List;
  * Author: keno
  * Date : 2020/2/16 11:05
  **/
-public abstract class CommanWithEmptyAdapter<T> extends RecyclerView.Adapter<CommanViewHolder> {
+public abstract class CommanWithEmptyAdapter<T> extends RecyclerView.Adapter<CommonViewHolder> {
 
     private static final int VIEW_TYPE_ITEM = 1;
     private static final int VIEW_TYPE_EMPTY = 0;
@@ -38,20 +38,20 @@ public abstract class CommanWithEmptyAdapter<T> extends RecyclerView.Adapter<Com
 
     @NonNull
     @Override
-    public CommanViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CommonViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         mContext = parent.getContext();
-        CommanViewHolder commanViewHolder = null;
+        CommonViewHolder commonViewHolder = null;
         if (viewType == VIEW_TYPE_EMPTY && mEmptyView != null) {
-            commanViewHolder = new CommanViewHolder(mContext, mEmptyView);
+            commonViewHolder = new CommonViewHolder(mContext, mEmptyView);
         } else {
-            commanViewHolder = CommanViewHolder.get(mContext, parent, mLayoutRes);
-            bindViewClickListener(commanViewHolder);
+            commonViewHolder = CommonViewHolder.get(mContext, parent, mLayoutRes);
+            bindViewClickListener(commonViewHolder);
         }
-        return commanViewHolder;
+        return commonViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CommanViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull CommonViewHolder holder, final int position) {
         if (VIEW_TYPE_ITEM == getItemViewType(position)) {
             convert(holder, position);
         }
@@ -77,14 +77,14 @@ public abstract class CommanWithEmptyAdapter<T> extends RecyclerView.Adapter<Com
         return mDatas;
     }
 
-    private void bindViewClickListener(final CommanViewHolder commanViewHolder) {
+    private void bindViewClickListener(final CommonViewHolder commonViewHolder) {
         if (onItemClickListener != null) {
-            commanViewHolder.itemView.setOnClickListener(v -> onItemClickListener.onClick(CommanWithEmptyAdapter.this, commanViewHolder.getLayoutPosition()));
+            commonViewHolder.itemView.setOnClickListener(v -> onItemClickListener.onClick(CommanWithEmptyAdapter.this, commonViewHolder.getLayoutPosition()));
         }
 
         if (onItemLongClickListener != null) {
-            commanViewHolder.itemView.setOnLongClickListener(v -> {
-                onItemLongClickListener.onLongClick(CommanWithEmptyAdapter.this, commanViewHolder.getLayoutPosition());
+            commonViewHolder.itemView.setOnLongClickListener(v -> {
+                onItemLongClickListener.onLongClick(CommanWithEmptyAdapter.this, commonViewHolder.getLayoutPosition());
                 return true;
             });
         }
@@ -118,7 +118,7 @@ public abstract class CommanWithEmptyAdapter<T> extends RecyclerView.Adapter<Com
         setEmptyView(emptyView);
     }
 
-    public abstract void convert(@NonNull CommanViewHolder holder, int pos);
+    public abstract void convert(@NonNull CommonViewHolder holder, int pos);
 
     public void setNewDatas(List<T> newDatas) {
         if (newDatas != mDatas) {

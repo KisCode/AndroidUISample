@@ -17,20 +17,20 @@ import java.util.List;
  * CreateDate: 2020/2/17 10:01
  */
 
-public abstract class CommanMutipleAdapter<T> extends CommanAdapter<T> {
+public abstract class CommonMutipleAdapter<T> extends CommonAdapter<T> {
     private MutipleItemSupport mMutipleItemSupport;
 
-    public CommanMutipleAdapter(Context mContext, List<T> mDatas, MutipleItemSupport mutipleItemSupport) {
+    public CommonMutipleAdapter(Context mContext, List<T> mDatas, MutipleItemSupport mutipleItemSupport) {
         super(mDatas, -1);
         this.mMutipleItemSupport = mutipleItemSupport;
     }
 
     @NonNull
     @Override
-    public CommanViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CommonViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         mContext = parent.getContext();
         int layout = mMutipleItemSupport.getItemLayout(viewType);
-        return CommanViewHolder.get(mContext, parent, layout);
+        return CommonViewHolder.get(mContext, parent, layout);
     }
 
     @Override

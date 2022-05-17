@@ -5,16 +5,13 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.kiscode.recylerview.sample.comman.CommanMutipleAdapter;
-import com.kiscode.recylerview.sample.comman.CommanViewHolder;
+import com.kiscode.recylerview.sample.comman.CommonMutipleAdapter;
+import com.kiscode.recylerview.sample.comman.CommonViewHolder;
 import com.kiscode.recylerview.sample.comman.MutipleItemSupport;
-import com.kiscode.recylerview.sample.decoration.StickDecoration;
 import com.kiscode.recylerview.sample.decoration.StickHeaderDecoration;
-import com.kiscode.recylerview.sample.decoration.StickHeaderGridDecoration;
 import com.kiscode.recylerview.sample.mock.MockApi;
 
 public class StickHeaderRecylerViewActivity extends AppCompatActivity {
@@ -64,9 +61,9 @@ public class StickHeaderRecylerViewActivity extends AppCompatActivity {
                 }
             }
         };
-        recyclerviewStick.setAdapter(new CommanMutipleAdapter<String>(this, MockApi.getMockNumberDatas(), mutipleItemSupport) {
+        recyclerviewStick.setAdapter(new CommonMutipleAdapter<String>(this, MockApi.getMockNumberDatas(), mutipleItemSupport) {
             @Override
-            public void convert(@NonNull CommanViewHolder holder, int pos) {
+            public void convert(@NonNull CommonViewHolder holder, int pos) {
                 Log.i("kkk", "ItemViewType:" + holder.getItemViewType());
                 if (TYPE_HEAD == holder.getItemViewType()) {
                     holder.itemView.setTag(true);
