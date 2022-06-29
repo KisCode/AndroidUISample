@@ -23,14 +23,21 @@
             android:layout_height="wrap_content"
             android:text="ConstraintLayoutDemoActivity"
             android:textAllCaps="false"
-            android:layout_margin="12dp"
-            android:visibility="gone" />
+            android:layout_margin="12dp" />
 
         <Button
             android:id="@+id/btn_practice_demo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="综合案例"
+            android:layout_margin="12dp"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_channel_demo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="显示渠道信息"
             android:layout_margin="12dp"
             android:textAllCaps="false" />
     </LinearLayout>

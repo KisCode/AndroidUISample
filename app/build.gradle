@@ -13,10 +13,12 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "HOST", '"https://xiaomi.com"')
     }
 
-    signingConfigs{
-        release{
+    signingConfigs {
+        release {
             storeFile file('../androidUi.jks')
             storePassword "zxc@1234"
             keyAlias "androiduikey"
@@ -29,14 +31,83 @@ android {
             minifyEnabled true    //代码混淆
             shrinkResources true  //无效资源文件清理
             zipAlignEnabled true  //压缩
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'  //混淆规则
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            //混淆规则
             signingConfig signingConfigs.release
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    flavorDimensions  "channel","ndkConfig"
+    productFlavors {
+        /*
+        //渠道包
+        xiaomi {
+            dimension "channel"
+        }
+        huawei {
+            dimension "channel"
+        }
+        vivo {
+            dimension "channel"
+        }
+        oppo {
+            dimension "channel"
+        }
+
+        //ndk架构分包
+        arm32 {
+            dimension "ndkConfig"
+            ndk {
+                abiFilters "armeabi-v7a"
+            }
+        }
+        */
+/*
+        arm64 {
+            dimension "ndkConfig"
+            ndk {
+                abiFilters "arm64-v8a"
+            }
+        }
+
+        armMix {
+            //兼容模式
+            dimension "ndkConfig"
+            ndk {
+                abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+            }
+        }
+       */
+    }
+
+    productFlavors.all {
+        flavor ->
+            if ("channel" == flavor.dimension) {
+                flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+            }
+    }
+
+
+}
+
+android.applicationVariants.all {
+    v ->
+        v.outputs.all {
+            output ->
+                if ("release" == v.buildType.name) {
+                    //输出路径
+                    def outputFileDir = "${project.projectDir.absolutePath}/ApkOutput/${v.buildType.name}_${v.versionName}"
+                    //输出文件名
+                    def fileName = "v${v.versionName}_${v.buildType.name}_${v.flavorName}_${new Date().format("yyyyMMdd_HHmmss")}.apk"
+                    outputFileName = fileName
+                    v.packageApplication.outputDirectory = new File(outputFileDir)
+                }
+        }
 }
 
 dependencies {
