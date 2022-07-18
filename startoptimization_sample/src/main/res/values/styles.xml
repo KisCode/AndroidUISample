@@ -12,7 +12,15 @@
         <!--          <item name="android:windowIsTranslucent">true</item>-->
 
         <!--        设置启动闪屏背景图：颜色、图片、layout        -->
-        <item name="android:windowBackground">@mipmap/ic_launch_bg</item>
+<!--        <item name="android:windowBackground">@mipmap/bg_splash</item>-->
+    </style>
+
+
+    <style name="splashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item><!--全屏-->
+        <item name="android:windowContentOverlay">@null</item><!--内容区域覆盖-->
+        <item name="android:windowTranslucentStatus">true</item><!--沉浸透明状态栏-->
+        <item name="android:windowBackground">@mipmap/bg_splash</item><!--冷启动背景图片-->
     </style>
 
 </resources>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">StartOpt</string>
+    <string name="skip">跳过</string>
+    <string name="remainingTime">还剩%d秒</string>
 </resources>
