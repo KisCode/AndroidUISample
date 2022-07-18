@@ -7,8 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.kiscode.recylerview.sample.comman.CommanMutipleAdapter;
-import com.kiscode.recylerview.sample.comman.CommanViewHolder;
+import com.kiscode.recylerview.sample.comman.CommonMutipleAdapter;
+import com.kiscode.recylerview.sample.comman.CommonViewHolder;
 import com.kiscode.recylerview.sample.comman.MutipleItemSupport;
 import com.kiscode.recylerview.sample.mock.MockApi;
 
@@ -50,9 +50,9 @@ public class CommanMutipleAdapterDemoActivity extends AppCompatActivity {
             }
         };
 
-        recyclerView.setAdapter(new CommanMutipleAdapter<String>(this, datas, mutipleItemSupport) {
+        recyclerView.setAdapter(new CommonMutipleAdapter<String>(this, datas, mutipleItemSupport) {
             @Override
-            public void convert(@NonNull CommanViewHolder holder, int pos) {
+            public void convert(@NonNull CommonViewHolder holder, int pos) {
                 if (mutipleItemSupport.getItemViewType(pos) == TYPE_IMAGE) {
                     holder.setImageResource(R.id.iv_img_item, R.mipmap.banner);
                 } else {

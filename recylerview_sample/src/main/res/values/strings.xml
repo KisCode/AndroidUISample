@@ -1,3 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ExtraTranslation">
     <string name="app_name">RecylerView_sample</string>
+    <string name="text_letter_poetry">床前明月光，疑是地上霜。举头望明月，低头思故乡。</string>
 </resources>

@@ -10,11 +10,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.kiscode.recylerview.sample.comman.CommanViewHolder;
+import com.kiscode.recylerview.sample.comman.CommonViewHolder;
 import com.kiscode.recylerview.sample.comman.CommanWithEmptyAdapter;
 import com.kiscode.recylerview.sample.mock.MockApi;
 
-import java.util.Collections;
 import java.util.List;
 
 public class CommanWithEmptyAdapterActivity extends AppCompatActivity {
@@ -59,7 +58,7 @@ public class CommanWithEmptyAdapterActivity extends AppCompatActivity {
         List<String> datas = MockApi.getMockDatas().subList(0,3);
         mAdapter = new CommanWithEmptyAdapter<String>(datas, R.layout.item_text_layout) {
             @Override
-            public void convert(CommanViewHolder holder, int pos) {
+            public void convert(CommonViewHolder holder, int pos) {
                 holder.setText(R.id.tv_text_item, mDatas.get(pos));
             }
         };

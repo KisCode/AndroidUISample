@@ -1,18 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/teal_200">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@android:color/black">
 
-    <Button
-        android:id="@+id/btn_next"
+
+    <TextView
+        android:id="@+id/tv_title_confirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/text_next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="next"/>
+        android:text="Confirm"
+        android:textSize="20sp"
+        android:padding="8dp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_msg_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="关闭跳转下个页面"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_confirm" />
+
+    <Button
+        android:id="@+id/btn_previous_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Previous"
+        app:layout_constraintEnd_toStartOf="@id/btn_next_confirm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_msg_confirm" />
+
+    <Button
+        android:id="@+id/btn_next_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        app:layout_constraintEnd_toStartOf="@id/btn_close_all_confirm"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_previous_confirm"
+        app:layout_constraintStart_toEndOf="@+id/btn_previous_confirm"
+        app:layout_constraintTop_toTopOf="@+id/btn_previous_confirm" />
+
+    <Button
+        android:id="@+id/btn_close_all_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Close All"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_next_confirm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_next_confirm"
+        app:layout_constraintTop_toTopOf="@+id/btn_next_confirm" />
 </androidx.constraintlayout.widget.ConstraintLayout>
