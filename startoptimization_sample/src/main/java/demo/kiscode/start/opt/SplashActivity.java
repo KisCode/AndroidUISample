@@ -7,8 +7,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.DisplayCutout;
-import android.view.View;
-import android.view.WindowInsets;
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
@@ -30,6 +28,18 @@ public class SplashActivity extends AppCompatActivity {
     private int remainingTime = TIME_SKIP;
     private Button btnSkip;
     private TimeHandler timeHandler;
+    private final Runnable timeRunnable = new Runnable() {
+        @Override
+        public void run() {
+            if (remainingTime <= 0) {
+                btnSkip.setText(getString(R.string.skip));
+            } else {
+                btnSkip.setText(getString(R.string.remainingTime, remainingTime / 1000));
+                remainingTime -= 1000;
+                timeHandler.postDelayed(this, 1000);
+            }
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,33 +56,19 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        if (timeHandler != null) {
+            timeHandler.removeCallbacks(timeRunnable);
+        }
     }
 
     private void initTimer() {
-        Runnable timeRunnable = new Runnable() {
-            @Override
-            public void run() {
-                if (remainingTime <= 0) {
-                    btnSkip.setText(getString(R.string.skip));
-                } else {
-                    btnSkip.setText(getString(R.string.remainingTime, remainingTime / 1000));
-                    remainingTime -= 1000;
-                    timeHandler.postDelayed(this, 1000);
-                }
-            }
-        };
         timeHandler = new TimeHandler(this);
         timeHandler.post(timeRunnable);
     }
 
     private void initView() {
         btnSkip = findViewById(R.id.btnHome);
-        btnSkip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toHome();
-            }
-        });
+        btnSkip.setOnClickListener(v -> toHome());
     }
 
     /***
@@ -80,37 +76,31 @@ public class SplashActivity extends AppCompatActivity {
      */
     @RequiresApi(api = Build.VERSION_CODES.P)
     private void adaptCutouts() {
-        btnSkip.getRootView().setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() {
-            @Override
-            public WindowInsets onApplyWindowInsets(View v, WindowInsets insets) {
-                //获取刘海区域
-                DisplayCutout displayCutout = insets.getDisplayCutout();
-                if (displayCutout != null) {
-                    int top = displayCutout.getSafeInsetTop();
-                    int bottom = displayCutout.getSafeInsetBottom();
-                    int left = displayCutout.getSafeInsetLeft();
-                    int right = displayCutout.getSafeInsetRight();
+        btnSkip.getRootView().setOnApplyWindowInsetsListener((v, insets) -> {
+            //获取刘海区域
+            DisplayCutout displayCutout = insets.getDisplayCutout();
+            if (displayCutout != null) {
+                int top = displayCutout.getSafeInsetTop();
+                int bottom = displayCutout.getSafeInsetBottom();
+                int left = displayCutout.getSafeInsetLeft();
+                int right = displayCutout.getSafeInsetRight();
 
-                    Log.i("displayCutout", "安全区域距离屏幕左边的距离 SafeInsetLeft:" + left);
-                    Log.i("displayCutout", "安全区域距离屏幕右部的距离 SafeInsetRight:" + right);
-                    Log.i("displayCutout", "安全区域距离屏幕顶部的距离 SafeInsetTop:" + top);
-                    Log.i("displayCutout", "安全区域距离屏幕底部的距离 SafeInsetBottom:" + bottom);
-                    ConstraintLayout.LayoutParams topLayoutParams = (ConstraintLayout.LayoutParams) btnSkip.getLayoutParams();
-                    topLayoutParams.setMargins(left, top, right, bottom);
-                }
-                return insets.consumeDisplayCutout();
+                Log.i("displayCutout", "安全区域距离屏幕左边的距离 SafeInsetLeft:" + left);
+                Log.i("displayCutout", "安全区域距离屏幕右部的距离 SafeInsetRight:" + right);
+                Log.i("displayCutout", "安全区域距离屏幕顶部的距离 SafeInsetTop:" + top);
+                Log.i("displayCutout", "安全区域距离屏幕底部的距离 SafeInsetBottom:" + bottom);
+                ConstraintLayout.LayoutParams topLayoutParams = (ConstraintLayout.LayoutParams) btnSkip.getLayoutParams();
+                topLayoutParams.setMargins(left, top, right, bottom);
             }
+            return insets.consumeDisplayCutout();
         });
     }
 
 
     private void toHome() {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                startActivity(new Intent(SplashActivity.this, StartOptMainActivity.class));
-                finish();
-            }
+        runOnUiThread(() -> {
+            startActivity(new Intent(SplashActivity.this, StartOptMainActivity.class));
+            finish();
         });
     }
 
