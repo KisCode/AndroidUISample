@@ -60,4 +60,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_ok" />
 
+
+    <Button
+        android:id="@+id/btn_numberpicker_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="36dp"
+        android:text="Number Picker Activity"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_show_dialog" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
