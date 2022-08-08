@@ -10,7 +10,6 @@
         android:id="@+id/number_picker"
         android:layout_width="0dp"
         android:layout_height="360dp"
-        android:solidColor="@android:color/black"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/number_picker_value"
@@ -21,10 +20,11 @@
         android:id="@+id/number_picker_value"
         android:layout_width="0dp"
         android:layout_height="360dp"
-        android:solidColor="@color/gray"
+        android:solidColor="@color/colorPrimary"
+        android:selectionDividerHeight="0dp"
+        android:descendantFocusability="blocksDescendants"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/number_picker"
         app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

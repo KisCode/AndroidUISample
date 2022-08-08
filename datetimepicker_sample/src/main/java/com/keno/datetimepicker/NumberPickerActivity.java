@@ -8,6 +8,8 @@ import android.widget.NumberPicker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.keno.datetimepicker.util.PickerViewUtil;
+
 public class NumberPickerActivity extends AppCompatActivity {
     public static void start(Context context) {
         Intent starter = new Intent(context, NumberPickerActivity.class);
@@ -25,21 +27,21 @@ public class NumberPickerActivity extends AppCompatActivity {
     private void initView() {
         String[] displayDataList = {"Java", "iOS", "Android", "Swift"};
         NumberPicker numberPicker = findViewById(R.id.number_picker);
-//
-//        //设置颜色
-//        PickerViewUtil.setNumberPickerDividerColor(this, numberPicker, R.color.colorPrimary);
-
         //设置数据源
         numberPicker.setDisplayedValues(displayDataList);
         //是否循环滚动
         numberPicker.setWrapSelectorWheel(false);
-//        Drawable drawable = ContextCompat.getDrawable(this, R.drawable.shape_divider);
-//        numberPicker.setDividerDrawable(drawable);
+        //设置内容不可编辑
+        numberPicker.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+
+        //设置分割线透明
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             numberPicker.setSelectionDividerHeight(0);
+        } else {
+            PickerViewUtil.setNumberPickerDividerColor(this, numberPicker, android.R.color.transparent);
         }
         numberPicker.setMinValue(0);
-        numberPicker.setMaxValue(3);
+        numberPicker.setMaxValue(displayDataList.length - 1);
         numberPicker.setValue(1);
 
 
