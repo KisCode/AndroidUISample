@@ -1,6 +1,7 @@
 package demo.kiscode.navigation;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -34,4 +35,9 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
     }
 
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+        Log.i("MainActivity","onBackPressed");
+    }
 }

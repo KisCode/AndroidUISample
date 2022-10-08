@@ -17,11 +17,11 @@ public class NotificationsViewModel extends ViewModel {
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
-                double maxLen = Math.random() * 1000 + 10;
+                double maxLen = Math.random() * 1000 + 100;
                 List<String> dataList = new ArrayList<>();
                 for (int i = 1; i < maxLen; i++) {
                     try {
-                        Thread.sleep(5);
+                        Thread.sleep(2);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

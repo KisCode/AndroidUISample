@@ -33,7 +33,7 @@ public class DashboardFragment extends Fragment {
         Log.i(TAG, "onCreate");
         DashboardViewModel dashboardViewModel =
                 new ViewModelProvider(this).get(DashboardViewModel.class);
-
+        dashboardViewModel.load();
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
