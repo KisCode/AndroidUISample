@@ -28,6 +28,7 @@ public class HomeRecylerViewActivity extends AppCompatActivity {
             , "MutipleTypeGridRecyclerActivity"
             , "CommanWithEmptyAapterDemoActivity"
             , "RecyclerView Linkage"
+            , "Cache Last Position"
     };
 
     private RecyclerView recyclerView;
@@ -91,6 +92,10 @@ public class HomeRecylerViewActivity extends AppCompatActivity {
                     case 8:
                         // Recyclerview联动
                         startActivity(new Intent(HomeRecylerViewActivity.this, LinkageRecyclerViewActivity.class));
+                        break;
+                    case 9:
+                        // 缓存上次位置
+                        startActivity(new Intent(HomeRecylerViewActivity.this, CachePositionRecyclerviewActivity.class));
                         break;
                 }
             }
