@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="styleBgItem">
+        <item name="android:background">@drawable/shape_circle_item</item>
+    </style>
+</resources>
