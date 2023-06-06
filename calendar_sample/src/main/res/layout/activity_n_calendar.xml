@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NCalendarActivity">
+
+    <!--  defaultCheckedSolarTextColor ：日期文本选中颜色  -->
+    <!--  todayCheckedSolarTextColor ：  今天日期文本选中颜色  -->
+    <!--  todayUnCheckedSolarTextColor ： 今天日期文本未选中颜色  -->
+    <!--  pointDistance ： 原点与文字间距  -->
+
+    <!--    app:defaultCheckedHolidayTextColor="@color/white"-->
+    <!--    app:defaultCheckedWorkdayTextColor="@color/white"-->
+    <com.necer.calendar.Miui10Calendar
+        android:id="@+id/miui9Calendar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultCheckedPoint="@drawable/shape_circle_item"
+        app:defaultCheckedSolarTextColor="@color/red"
+        app:pointDistance="4dp"
+        app:pointLocation="down"
+        app:todayCheckedSolarTextColor="@color/purple_500"
+        app:todayUnCheckedSolarTextColor="@color/red">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.necer.calendar.Miui10Calendar>
+</androidx.constraintlayout.widget.ConstraintLayout>

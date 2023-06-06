@@ -5,6 +5,8 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FFEE2222</color>
     <color name="teal_700">#FFBB0000</color>
+    <color name="red">#FFBB0000</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+<!--    <color name="N_solidCircleColor">#FFBB86FC</color>-->
 </resources>

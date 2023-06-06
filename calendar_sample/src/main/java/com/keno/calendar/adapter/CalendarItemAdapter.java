@@ -18,7 +18,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 /**
- * Description:
+ * Description: 基于Recyclerview的日历选择器Adapter
  * Date : 2023/5/8 15:05
  **/
 public class CalendarItemAdapter extends RecyclerView.Adapter<CalendarItemAdapter.CalendarItemViewHolder> {
