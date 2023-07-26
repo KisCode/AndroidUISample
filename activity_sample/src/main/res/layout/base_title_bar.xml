@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:background="?attr/colorPrimary"
+    android:gravity="center"
+    app:contentInsetStartWithNavigation="0dp"
+    app:maxButtonHeight="44dp"
+    tools:title="标题"
+    tools:titleText="标题" />
+
+    <!-- background：设置标题栏颜色为主题色 -->
+    <!-- theme：应用主题是浅色主题，所以标题栏默认也是浅色主题，此处使用深色标题栏。（深色标题栏文字颜色为浅色） -->
+    <!-- popupTheme：应用主题是浅色主题，所以标题栏弹窗是深色主题，此处使用浅色弹窗菜单 -->
+
+    <!-- app:maxButtonHeight="?attr/actionBarSize" -->
+    <!-- android:background="?attr/colorPrimary" -->
+    <!-- tools:navigationIcon="?attr/homeAsUpIndicator" -->

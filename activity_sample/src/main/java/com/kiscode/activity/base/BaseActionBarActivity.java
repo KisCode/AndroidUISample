@@ -1,4 +1,4 @@
-package com.kiscode.activity;
+package com.kiscode.activity.base;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -13,8 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
  * Author: keno
  * Date : 2021/3/24 10:53
  **/
-public class BaseActionBarActivity extends AppCompatActivity {
-    protected final String TAG = getClass().getSimpleName();
+public class BaseActionBarActivity extends BaseActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

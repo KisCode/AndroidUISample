@@ -2,26 +2,24 @@
 <resources>
 
     <!-- 圆环进度控件声明属性  -->
-    <declare-styleable name="CircleProgreeView">
+    <declare-styleable name="CircleProgressView">
         <!--   圆环背景颜色     -->
-        <attr name="backgroudColor" format="color" />
+        <attr name="backgroundColor" format="color" />
         <!--   圆环前景颜色，进度    -->
-        <attr name="foregroudColor" format="color" />
+        <attr name="foregroundColor" format="color" />
         <!--   圆环宽度     -->
         <attr name="roundWidth" format="dimension" />
-        <!--   圆环宽度     -->
+        <!--   圆环进度     -->
         <attr name="progress" format="float" />
         <!--   圆弧开始角度     -->
         <attr name="startAngel" format="float" />
         <!--   圆弧阴影宽度     -->
         <attr name="shadowWidth" format="dimension" />
-        <!--   百分比大小     -->
+        <!--   文字大小     -->
         <attr name="textSize" format="dimension" />
         <!--   百分比字体颜色     -->
         <attr name="textColor" format="color" />
         <!--   是否显示百分比字体     -->
         <attr name="showText" format="boolean" />
-
-
     </declare-styleable>
 </resources>

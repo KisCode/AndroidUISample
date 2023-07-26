@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:layoutMode="opticalBounds"
     android:layout_margin="8dp"
-    />
+/>
 ```
 
 2. 如果需要实现一个==日期选择器==可以使用官方DatePicker
@@ -29,9 +29,33 @@
 - android:datePickerMode="calendar" 日期选择器则显示Android默认日历风格
 - android:datePickerMode="spinner" 滚轮选择器风格
 
+[日期选择器监听回调适配低版本](https://stackoverflow.com/questions/2051153/android-ond)
+DatePicker 设置日期变化监听DatePicker.OnDateChangedListener时需注意低版本适配，
+- 日期选择器在低于Android 8.0版本必须在init方法设置回调监听
+- 高于Android 8.0可使用datepicker.setOnDateChangedListener设置回调
+
+```java
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+    datepicker.setOnDateChangedListener(new DatePicker.OnDateChangedListener() {
+           @Override
+           public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+               Log.i("onTimeChanged", year + "-" + monthOfYear + "-" + dayOfMonth);
+           }
+       });
+}else {
+    //日期选择器在低于Android8.0版本必须在init方法设置回调监听，如果使用 则会抛出异常 参考{@link https://stackoverflow.com/questions/2051153/android-ondatechangedlistener-how-do-you-set-this}
+    datepicker.init(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH), new DatePicker.OnDateChangedListener() {
+        @Override
+        public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            Log.i("onTimeChanged", year + "-" + monthOfYear + "-" + dayOfMonth);】】、
+    });
+}
+```
+
+
 
 3. 如果需要实现一个==时间选择器==可以使用官方TimePicker,并设置选择器属性
-    android:timePickerMode="spinner"
+   android:timePickerMode="spinner"
 
 ```xml
 <TimePicker
@@ -47,6 +71,6 @@
 ```
 
 4. 最后，实现日期+时间选择器，通过DatePicker + TimePicker即可实现
-![滚轮日期选择器](https://github.com/KisCode/AndroidUISample/blob/develop/datetimepicker_sample/image/Screenshot_wheel.png)
+   ![滚轮日期选择器](https://github.com/KisCode/AndroidUISample/blob/develop/datetimepicker_sample/image/Screenshot_wheel.png)
 
-![仿IOS风格底部弹出的日期选择器](https://github.com/KisCode/AndroidUISample/blob/develop/datetimepicker_sample/image/Screenshot_datetime_picker.png)
+![仿IOS风格底部弹出的日期选择器](https://github.com/KisCode/AndroidUISample/blob/develop/datetimepicker_sample/image/Screenshot_datetime_picker.pn

@@ -6,38 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".CircleProgressViewSampleActivity">
 
-    <com.keno.circleprogress.sample.view.CircleProgreeView
+    <com.keno.circleprogress.sample.view.CircleProgressView
         android:id="@+id/progress_circular1"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        app:backgroudColor="@color/colorBgCircle"
-        app:foregroudColor="@color/colorPrimary"
+        app:backgroundColor="@color/colorBgCircle"
+        app:foregroundColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/colorBgCircle"
         app:progress="60"
         app:roundWidth="10dp"
         app:startAngel="90" />
 
-    <com.keno.circleprogress.sample.view.CircleProgreeView
+    <com.keno.circleprogress.sample.view.CircleProgressView
         android:id="@+id/progress_circular2"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        app:backgroudColor="@color/colorBgCircle"
-        app:foregroudColor="@color/colorAccent"
+        app:backgroundColor="@color/colorBgCircle"
+        app:foregroundColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progress_circular1"
-        app:progress="10"
-        app:roundWidth="20dp"
+        app:progress="20"
+        app:roundWidth="10dp"
         app:startAngel="90" />
 
-    <com.keno.circleprogress.sample.view.CircleProgreeView
+    <com.keno.circleprogress.sample.view.CircleProgressView
         android:id="@+id/progress_circular3"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        app:backgroudColor="@color/colorBgCircle"
-        app:foregroudColor="@color/colorPrimary"
+        app:backgroundColor="@color/colorBgCircle"
+        app:foregroundColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progress_circular2"
@@ -45,12 +46,12 @@
         app:roundWidth="30dp"
         app:shadowWidth="2dp"/>
 
-    <com.keno.circleprogress.sample.view.CircleProgreeView
+    <com.keno.circleprogress.sample.view.CircleProgressView
         android:id="@+id/progress_circular"
         android:layout_width="160dp"
         android:layout_height="160dp"
-        app:backgroudColor="@color/colorBgCircle"
-        app:foregroudColor="@color/colorPrimary"
+        app:backgroundColor="@color/colorBgCircle"
+        app:foregroundColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progress_circular3"
