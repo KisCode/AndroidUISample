@@ -42,7 +42,7 @@ public class LinkageRecyclerViewActivity extends AppCompatActivity {
     private void initView() {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerview_option);
         recyclerView.setLayoutManager(new GridLayoutManager(this, COUNT_SPAN_GRID));
-        String dataSource = getString(R.string.text_letter_idiom);
+        String dataSource = getString(R.string.text_letter_poetry);
         String[] arr = dataSource.split("");
         LinkageGridAdapter adapter = new LinkageGridAdapter(new ArrayList<>());
         recyclerView.setAdapter(adapter);
@@ -81,6 +81,7 @@ public class LinkageRecyclerViewActivity extends AppCompatActivity {
                     Collections.addAll(list, arr);
                     LinkageGridAdapter adapter = new LinkageGridAdapter(list, recyclerWidth / COUNT_SPAN_GRID - SIZE_DIVIDER * 2);
                     recyclerView.setAdapter(adapter);
+                    recyclerView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 }
             }
         });

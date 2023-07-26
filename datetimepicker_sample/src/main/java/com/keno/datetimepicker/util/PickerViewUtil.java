@@ -88,12 +88,12 @@ public class PickerViewUtil {
     }
 
     /***
-     * 设置NumberPicker分割线颜色
+     * 设置NumberPicker分割线颜色 此方法在Android 8.0后无效
      * @param context 上下文
      * @param numberPicker NumberPicker滚轮
      * @param colorRes 分割线颜色
      */
-    private static void setNumberPickerDividerColor(Context context, NumberPicker numberPicker, @ColorRes int colorRes) {
+    public static void setNumberPickerDividerColor(Context context, NumberPicker numberPicker, @ColorRes int colorRes) {
         Field[] pickerFields = NumberPicker.class.getDeclaredFields();
         for (Field pf : pickerFields) {
             if (pf.getName().equals("mSelectionDivider")) {

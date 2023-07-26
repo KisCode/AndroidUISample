@@ -8,8 +8,9 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
-import com.kiscode.activity.BaseActionBarActivity;
+import com.kiscode.activity.base.BaseActionBarActivity;
 import com.kiscode.activity.R;
+import com.kiscode.activity.base.BaseToolbarActivity;
 
 /**
  * Description: Actvity 单例复用，确保任务栈内该activity单例，
@@ -19,7 +20,7 @@ import com.kiscode.activity.R;
  * Author: keno
  * Date : 2021/3/24 10:36
  **/
-public class AActivity extends BaseActionBarActivity {
+public class AActivity extends BaseToolbarActivity {
     public static void start(Context context) {
         Intent intent = new Intent(context, AActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);

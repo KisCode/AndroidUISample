@@ -6,14 +6,14 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.keno.circleprogress.sample.view.CircleProgreeView;
+import com.keno.circleprogress.sample.view.CircleProgressView;
 
 public class CircleProgressViewSampleActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private CircleProgreeView progressCircular;
-    private CircleProgreeView progressCircular1;
-    private CircleProgreeView progressCircular2;
-    private CircleProgreeView progressCircular3;
+    private CircleProgressView progressCircular;
+    private CircleProgressView progressCircular1;
+    private CircleProgressView progressCircular2;
+    private CircleProgressView progressCircular3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +23,9 @@ public class CircleProgressViewSampleActivity extends AppCompatActivity implemen
     }
 
     private void initView() {
-        progressCircular1 = (CircleProgreeView) findViewById(R.id.progress_circular1);
-        progressCircular2 = (CircleProgreeView) findViewById(R.id.progress_circular2);
-        progressCircular3 = (CircleProgreeView) findViewById(R.id.progress_circular3);
+        progressCircular1 = findViewById(R.id.progress_circular1);
+        progressCircular2 =  findViewById(R.id.progress_circular2);
+        progressCircular3 = findViewById(R.id.progress_circular3);
         progressCircular = findViewById(R.id.progress_circular);
         Button btnAdd = findViewById(R.id.btn_add);
 

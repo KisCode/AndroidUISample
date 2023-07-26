@@ -15,19 +15,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.keno.datetimepicker.util.PickerViewUtil;
 
+import java.util.Calendar;
+
 /**
- * Description:
+ * Description: Android系统自带的日期选择器使用示例
  * Author: keno
  * Date : 2020/7/23 13:27
- *
  **/
 public class DateTimeMainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    //日期选择器
     private DatePicker datepicker;
+    //时间选择器
     private TimePicker timePicker;
     private TextView tvCurrentDatetime;
-    private Button btnOk;
-    private Button btnShow;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -51,18 +52,39 @@ public class DateTimeMainActivity extends AppCompatActivity implements View.OnCl
         PickerViewUtil.resizePikcer(timePicker, itemWidth);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        //重新计算宽度
+        PickerViewUtil.resizePikcer(datepicker, 120);
+        PickerViewUtil.resizePikcer(timePicker, 120);
+    }
+
     private void initView() {
         datepicker = findViewById(R.id.datepicker);
         timePicker = findViewById(R.id.timePicker);
 
         timePicker.setIs24HourView(true);
-        datepicker.setOnDateChangedListener(new DatePicker.OnDateChangedListener() {
-            @Override
-            public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                Log.i("onTimeChanged", year + "-" + monthOfYear + "-" + dayOfMonth);
-            }
-        });
+        Calendar cal = Calendar.getInstance();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            datepicker.setOnDateChangedListener(new DatePicker.OnDateChangedListener() {
+                @Override
+                public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                    Log.i("onTimeChanged", year + "-" + monthOfYear + "-" + dayOfMonth);
+                }
+            });
+        } else {
+            //日期选择器在低于Android8.0版本必须在init方法设置回调监听，如果使用 则会抛出异常 参考{@link https://stackoverflow.com/questions/2051153/android-ondatechangedlistener-how-do-you-set-this}
+            datepicker.init(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH), new DatePicker.OnDateChangedListener() {
+                @Override
+                public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                    Log.i("onTimeChanged", year + "-" + monthOfYear + "-" + dayOfMonth);
+                }
+            });
+        }
+
         timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
@@ -73,19 +95,11 @@ public class DateTimeMainActivity extends AppCompatActivity implements View.OnCl
 
         tvCurrentDatetime = findViewById(R.id.tv_current_datetime);
         tvCurrentDatetime.setOnClickListener(this);
-        btnOk = findViewById(R.id.btn_ok);
+        Button btnOk = findViewById(R.id.btn_ok);
         btnOk.setOnClickListener(this);
-        btnShow = findViewById(R.id.btn_show_dialog);
+        Button btnShow = findViewById(R.id.btn_show_dialog);
         btnShow.setOnClickListener(this);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-
-        //重新计算宽度
-        PickerViewUtil.resizePikcer(datepicker,120);
-        PickerViewUtil.resizePikcer(timePicker,120);
+        findViewById(R.id.btn_numberpicker_activity).setOnClickListener(this);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -106,10 +120,12 @@ public class DateTimeMainActivity extends AppCompatActivity implements View.OnCl
 
                     }
                 });
-                dialog.show(getSupportFragmentManager(),"DateTimeDialog");
+                dialog.show(getSupportFragmentManager(), "DateTimeDialog");
+                break;
+            case R.id.btn_numberpicker_activity: //数字选择器逻辑实现
+                NumberPickerActivity.start(this);
                 break;
         }
     }
-
 
 }
