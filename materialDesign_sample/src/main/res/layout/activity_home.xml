@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomeActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/purple_500"
+        app:titleTextColor="@color/white"
+        app:title="@string/app_name"/>
+    <View style="@style/style_line_horizonal"/>
+
+    <TextView
+        style="@style/style_item_ripple_home"
+        android:text="ToolBar"
+        android:onClick="startToolbar"/>
+    <View style="@style/style_line_horizonal"/>
+
+    <TextView
+        style="@style/style_item_ripple_home"
+        android:text="DrawerLayout"
+        android:onClick="startDrawerLayout"/>
+    <View style="@style/style_line_horizonal"/>
+
+    <TextView
+        style="@style/style_item_ripple_home"
+        android:text="BottomNavigationView"
+        android:onClick="startBottomNavigationView"/>
+    <View style="@style/style_line_horizonal"/>
+
+    <TextView
+        style="@style/style_item_ripple_home"
+        android:text="FloatingActionBar"
+        android:onClick="startFloatingActionBar"/>
+    <View style="@style/style_line_horizonal"/>
+
+
+    <TextView
+        style="@style/style_item_ripple_home"
+        android:text="CoordinatorLayout"
+        android:onClick="startCoordinatorLayout"/>
+    <View style="@style/style_line_horizonal"/>
+
+    <TextView
+        style="@style/style_item_ripple_home"
+        android:text="BottomSheet"
+        android:onClick="startBottomSheet"/>
+    <View style="@style/style_line_horizonal"/>
+    <TextView
+        style="@style/style_item_ripple_home"
+        android:text="沉浸式状态栏"
+        android:onClick="startImmersiveStatus"/>
+    <View style="@style/style_line_horizonal"/>
+</LinearLayout>

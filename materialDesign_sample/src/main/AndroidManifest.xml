@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="kiscode.material.design">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MaterialDesignAndroid">
+        <activity android:name=".bottomsheet.BottomSheetActivity"></activity>
+        <activity android:name=".coordinator.CollapsingToolBarImageActivity" />
+        <activity android:name=".coordinator.CollapsingToolbarActivity" />
+        <activity android:name=".coordinator.AppBarLayoutActivity" />
+        <activity android:name=".coordinator.SnackBarActivity" />
+        <activity android:name=".coordinator.CoordinatorLayoutSampleActivity" />
+        <activity android:name=".HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- 沉浸式状态栏 -->
+        <activity android:name=".ImmersiveStatusActivity" />
+        <activity android:name=".coordinator.NestRecycleViewActivity" />
+        <activity android:name=".ToolbarActivity" />
+        <activity android:name=".DrawerLayoutActivity" />
+    </application>
+
+</manifest>

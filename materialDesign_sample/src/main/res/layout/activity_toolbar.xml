@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ToolbarActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_head"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/Theme.MaterialDesignAndroid.AppBarOverlay"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/menu_toolbar"
+        app:titleTextColor="@color/white" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_menu"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_head"
+        app:logo="@mipmap/ic_launcher"
+        app:navigationIcon="@drawable/abc_vector_test"
+        app:title="@string/menu_toolbar"
+        app:titleMarginStart="100dp"
+        app:titleTextColor="@color/white" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_menu2"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/Theme.MaterialDesignAndroid.AppBarOverlay"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_menu"
+        app:titleTextColor="@color/white">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:gravity="center"
+            android:text="@string/menu_toolbar"
+            android:textColor="@color/white" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_tab"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:background="?attr/colorPrimary"
+        app:navigationIcon="@drawable/abc_vector_test"
+        android:theme="@style/Theme.MaterialDesignAndroid.AppBarOverlay"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_menu2"
+        app:titleTextColor="@color/white">
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/colorPrimary"
+            app:tabGravity="center"
+            app:tabIndicatorColor="@color/white"
+            app:tabIndicatorHeight="2dp"
+            app:tabTextColor="@color/teal_700"
+            app:tabSelectedTextColor="@color/white">
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Tab1"/>
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Tab2"/>
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Tab3"/>
+        </com.google.android.material.tabs.TabLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_search"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:background="?attr/colorPrimary"
+        app:navigationIcon="@drawable/abc_vector_test"
+        android:theme="@style/Theme.MaterialDesignAndroid.AppBarOverlay"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_tab"
+        app:titleTextColor="@color/white" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
