@@ -21,7 +21,7 @@
         style="@style/style_item_ripple_home"
         android:onClick="startSnackBarSample"
         android:text="FloatActionbar + SnackBar" />
-    <View style="@style/style_line_horizonal" />
+    <View style="@style/style_line_horizontal" />
 
 
     <TextView
@@ -29,27 +29,27 @@
         android:onClick="startAppBarLayoutSample"
         android:text="AppBarLayout + NestedScrollView" />
 
-    <View style="@style/style_line_horizonal" />
+    <View style="@style/style_line_horizontal" />
 
     <TextView
         style="@style/style_item_ripple_home"
         android:onClick="startCollapsingToolbarSample"
         android:text="CollapsingToolbarLayout + NestedScrollView" />
 
-    <View style="@style/style_line_horizonal" />
+    <View style="@style/style_line_horizontal" />
 
     <TextView
         style="@style/style_item_ripple_home"
         android:onClick="startCollapsingToolbarImageSample"
         android:text="CollapsingToolbarLayout + Image + NestedScrollView" />
 
-    <View style="@style/style_line_horizonal" />
+    <View style="@style/style_line_horizontal" />
 
     <TextView
         style="@style/style_item_ripple_home"
         android:onClick="startNestRecyclerViewSample"
         android:text="Nest + RecyclerView" />
 
-    <View style="@style/style_line_horizonal" />
+    <View style="@style/style_line_horizontal" />
 
 </LinearLayout>

@@ -6,53 +6,70 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".HomeActivity">
+
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/purple_500"
-        app:titleTextColor="@color/white"
-        app:title="@string/app_name"/>
-    <View style="@style/style_line_horizonal"/>
+        app:title="@string/app_name"
+        app:titleTextColor="@color/white" />
+
+    <View style="@style/style_line_horizontal" />
 
     <TextView
         style="@style/style_item_ripple_home"
-        android:text="ToolBar"
-        android:onClick="startToolbar"/>
-    <View style="@style/style_line_horizonal"/>
+        android:onClick="startToolbar"
+        android:text="ToolBar" />
+
+    <View style="@style/style_line_horizontal" />
 
     <TextView
         style="@style/style_item_ripple_home"
-        android:text="DrawerLayout"
-        android:onClick="startDrawerLayout"/>
-    <View style="@style/style_line_horizonal"/>
+        android:onClick="startDrawerLayout"
+        android:text="DrawerLayout" />
+
+    <View style="@style/style_line_horizontal" />
 
     <TextView
         style="@style/style_item_ripple_home"
-        android:text="BottomNavigationView"
-        android:onClick="startBottomNavigationView"/>
-    <View style="@style/style_line_horizonal"/>
+        android:onClick="startBottomNavigationView"
+        android:text="BottomNavigationView" />
+
+    <View style="@style/style_line_horizontal" />
 
     <TextView
         style="@style/style_item_ripple_home"
-        android:text="FloatingActionBar"
-        android:onClick="startFloatingActionBar"/>
-    <View style="@style/style_line_horizonal"/>
+        android:onClick="startFloatingActionBar"
+        android:text="FloatingActionBar" />
+
+    <View style="@style/style_line_horizontal" />
 
 
     <TextView
         style="@style/style_item_ripple_home"
-        android:text="CoordinatorLayout"
-        android:onClick="startCoordinatorLayout"/>
-    <View style="@style/style_line_horizonal"/>
+        android:onClick="startCoordinatorLayout"
+        android:text="CoordinatorLayout" />
+
+    <View style="@style/style_line_horizontal" />
 
     <TextView
         style="@style/style_item_ripple_home"
-        android:text="BottomSheet"
-        android:onClick="startBottomSheet"/>
-    <View style="@style/style_line_horizonal"/>
+        android:onClick="startBottomSheet"
+        android:text="BottomSheet" />
+
+    <View style="@style/style_line_horizontal" />
+
     <TextView
         style="@style/style_item_ripple_home"
-        android:text="沉浸式状态栏"
-        android:onClick="startImmersiveStatus"/>
-    <View style="@style/style_line_horizonal"/>
+        android:onClick="startBottomSheetDialogFragment"
+        android:text="BottomSheetDialogFragment" />
+
+    <View style="@style/style_line_horizontal" />
+
+    <TextView
+        style="@style/style_item_ripple_home"
+        android:onClick="startImmersiveStatus"
+        android:text="沉浸式状态栏" />
+
+    <View style="@style/style_line_horizontal" />
 </LinearLayout>

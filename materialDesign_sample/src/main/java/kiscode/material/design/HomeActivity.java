@@ -7,6 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import kiscode.material.design.bottomsheet.BottomSheetActivity;
+import kiscode.material.design.bottomsheet.SampleBottomSheetDialogFragment;
 import kiscode.material.design.coordinator.CoordinatorLayoutSampleActivity;
 
 public class HomeActivity extends AppCompatActivity {
@@ -45,5 +46,10 @@ public class HomeActivity extends AppCompatActivity {
 
     private void startDemoActivity(Class targetActivity) {
         startActivity(new Intent(this, targetActivity));
+    }
+
+    public void startBottomSheetDialogFragment(View view) {
+        SampleBottomSheetDialogFragment fragment=new SampleBottomSheetDialogFragment();
+        fragment.show(getSupportFragmentManager(),"SampleBottomSheetDialogFragment");
     }
 }

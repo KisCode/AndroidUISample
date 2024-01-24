@@ -42,9 +42,33 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    flavorDimensions  "channel","ndkConfig"
+    flavorDimensions  "ndkConfig","channel"
     productFlavors {
-        /*
+        //ndk架构分包
+        //纯32位
+
+/*        arm32_ {
+            dimension "ndkConfig"
+            ndk {
+                abiFilters "armeabi-v7a"
+            }
+        }
+        //纯64位
+        arm64_ {
+            dimension "ndkConfig"
+            ndk {
+                abiFilters "arm64-v8a"
+            }
+        }
+        */
+        //兼容模式
+        allNdk_ {
+            dimension "ndkConfig"
+            ndk {
+                abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+            }
+        }
+
         //渠道包
         xiaomi {
             dimension "channel"
@@ -52,42 +76,25 @@ android {
         huawei {
             dimension "channel"
         }
-        vivo {
+ /*       vivo {
             dimension "channel"
         }
         oppo {
             dimension "channel"
         }
+        tencent {
+            dimension "channel"
+        }
+        coolapk {
+            dimension "channel"
+        }*/
 
-        //ndk架构分包
-        arm32 {
-            dimension "ndkConfig"
-            ndk {
-                abiFilters "armeabi-v7a"
-            }
-        }
-        */
-/*
-        arm64 {
-            dimension "ndkConfig"
-            ndk {
-                abiFilters "arm64-v8a"
-            }
-        }
-
-        armMix {
-            //兼容模式
-            dimension "ndkConfig"
-            ndk {
-                abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
-            }
-        }
-       */
     }
 
     productFlavors.all {
         flavor ->
             if ("channel" == flavor.dimension) {
+                //更改AndroidManifest.xml文件内${UMENG_CHANNEL_VALUE}占位为 name
                 flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
             }
     }
@@ -100,6 +107,7 @@ android.applicationVariants.all {
         v.outputs.all {
             output ->
                 if ("release" == v.buildType.name) {
+
                     //输出路径
                     def outputFileDir = "${project.projectDir.absolutePath}/ApkOutput/${v.buildType.name}_${v.versionName}"
                     //输出文件名
