@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.kiscode.stackviewpager.fragment.CardFragmnet;
+import com.kiscode.stackviewpager.fragment.CardFragment;
 
 import java.util.List;
 
@@ -17,7 +17,6 @@ import java.util.List;
  * Author: keno
  * Date : 2021/2/20 14:02
  **/
-//public class CardFragmentAdapter extends FragmentPagerAdapter {
 public class CardFragmentAdapter extends FragmentStatePagerAdapter {
     private List<String> mDatas;
 
@@ -30,7 +29,7 @@ public class CardFragmentAdapter extends FragmentStatePagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        return CardFragmnet.newInstance(mDatas.get(position));
+        return CardFragment.newInstance(mDatas.get(position));
     }
 
     @Override

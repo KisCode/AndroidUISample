@@ -1,6 +1,5 @@
 package com.kiscode.stackviewpager.fragment;
 
-import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.GestureDetector;

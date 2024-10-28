@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <androidx.emoji.widget.EmojiTextView
@@ -18,4 +19,27 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tv_gif"
+        android:layout_marginTop="10dp"
+        android:textSize="72sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="gif展示"/>
+
+    <ImageView
+        android:id="@+id/iv_gif"
+        android:layout_width="80dp"
+        android:layout_height="80dp"/>
+
+    <pl.droidsonroids.gif.GifTextView
+        android:id="@+id/tv_gif_support"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="GifTextureViewgif展示"/>
+    <Button
+        android:id="@+id/btn_load_gif"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="加载动图"/>
+</LinearLayout>

@@ -17,13 +17,13 @@ import com.kiscode.stackviewpager.R;
  * Author: keno
  * Date : 2021/2/20 14:03
  **/
-public class CardFragmnet extends Fragment {
+public class CardFragment extends Fragment {
     private static final String KEY_CONTENT = "CONTENT";
 
-    public static CardFragmnet newInstance(String content) {
+    public static CardFragment newInstance(String content) {
         Bundle args = new Bundle();
         args.putString(KEY_CONTENT, content);
-        CardFragmnet fragment = new CardFragmnet();
+        CardFragment fragment = new CardFragment();
         fragment.setArguments(args);
         return fragment;
     }
