@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialDesignAndroid">
+        <!--        标题栏颜色-->
+        <item name="colorPrimary">?attr/colorPrimary</item>
+
+        <!--        状态栏颜色-->
+        <item name="colorPrimaryDark">?attr/colorPrimaryVariant</item>
+
+        <!--        强调颜色：显示控件交互颜色-->
+        <item name="colorAccent">?attr/colorSecondary</item>
+
+        <!--        窗口颜色-->
+        <item name="android:windowBackground">?attr/colorOnSurface</item>
+
+        <!--        &lt;!&ndash;        虚拟导航栏颜色&ndash;&gt;-->
+        <!--        <item name="android:navigationBarColor">?attr/colorSurface</item>-->
+    </style>
+
+
+    <style name="Theme.JetPackPractice.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.JetPackPractice.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="style_item_home">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:background">@drawable/shape_bg_item</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="style_item_ripple_home">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/purple_500</item>
+        <item name="android:drawableRight">@drawable/ic_baseline_keyboard_arrow_right_24</item>
+    </style>
+
+    <style name="style_line_horizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.6dp</item>
+        <item name="android:background">@color/purple_200</item>
+    </style>
+
+
+    <style name="ThemeOverlay.AppBarLayout" parent="">
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="colorControlNormal">@color/white</item>
+<!--        <item name="popupTheme">@style/Theme.JetPackPractice.PopupOverlay</item>-->
+    </style>
+
+    <style name="StyleBottomSheetStyleWrapper" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:background">@drawable/shape_bg_bottom_sheet</item>
+    </style>
+
+    <style name="styleBottomSheetDialog" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/StyleBottomSheetStyleWrapper</item>
+    </style>
+</resources>

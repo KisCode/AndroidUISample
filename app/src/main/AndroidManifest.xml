@@ -12,15 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--meta占位 通过gradle方式 多productFlavors配置实现多渠道包-->
-        <!--        <meta-data
-                    android:name="UMENG_CHANNEL"
-                    android:value="${UMENG_CHANNEL_VALUE}" />-->
 
-        <!--    通过360加固工具动态修改该项配置值从而实现多渠道包    -->
+        <!--meta占位 通过gradle方式 多productFlavors配置实现多渠道包-->
         <meta-data
             android:name="UMENG_CHANNEL"
-            android:value="default" />
+            android:value="${UMENG_CHANNEL_VALUE}" />
+
+        <!--    通过360加固工具动态修改该项配置值从而实现多渠道包    -->
+        <!--
+                <meta-data
+                    android:name="UMENG_CHANNEL"
+                    android:value="default" />
+        -->
 
         <activity android:name=".MainActivity">
             <intent-filter>
