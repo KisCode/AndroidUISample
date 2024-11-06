@@ -52,5 +52,5 @@ dependencies {
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //通过desugaring的过程能够支持部分Java 8 API的语法糖
-    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.0.10'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
 }
