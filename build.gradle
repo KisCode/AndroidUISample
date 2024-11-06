@@ -2,8 +2,21 @@
 
 buildscript {
     repositories {
+//        maven { url'https://maven.aliyun.com/nexus/content/groups/public/'}
         google()
         jcenter()
+        mavenCentral()
+
+        maven { url "https://jitpack.io" }
+        maven { url 'https://repo1.maven.org/maven2/' }
+        maven {
+            url 'https://maven.aliyun.com/repository/public/'
+        }
+//        maven { url 'https://artifact.bytedance.com/repository/pangle'}
+//        //mintegral sdk依赖   引入mintegral sdk需要添加此maven
+//        maven {
+//            url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_support/"
+//        }
         
     }
     dependencies {
@@ -16,9 +29,21 @@ buildscript {
 
 allprojects {
     repositories {
+//        maven { url'https://maven.aliyun.com/nexus/content/groups/public/'}
         google()
         jcenter()
-        
+        mavenCentral()
+
+        maven { url "https://jitpack.io" }
+        maven { url 'https://repo1.maven.org/maven2/' }
+        maven {
+            url 'https://maven.aliyun.com/repository/public/'
+        }
+//        maven { url 'https://artifact.bytedance.com/repository/pangle'}
+//        //mintegral sdk依赖   引入mintegral sdk需要添加此maven
+//        maven {
+//            url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_support/"
+//        }
     }
 }
 
