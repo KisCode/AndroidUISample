@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">appWidgets_sample</string>
+    <string name="sample_widget_name">First Widget</string>
+    <string name="text_clock">Clock</string>
+    <string name="text_watter_count">饮水量：%d</string>
+</resources>
