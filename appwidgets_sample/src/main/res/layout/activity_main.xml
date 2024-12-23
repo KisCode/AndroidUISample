@@ -5,16 +5,38 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:padding="12dp">
 
     <Button
         android:id="@+id/btn_add_watter_widget"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Widget"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Add Watter Widget"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/btn_add_clock_widget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Clock Widget"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_add_watter_widget"/>
+
+
+    <Button
+        android:id="@+id/btn_do_work"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Do Work"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_add_clock_widget"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

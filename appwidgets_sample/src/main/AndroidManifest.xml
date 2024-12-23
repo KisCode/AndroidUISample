@@ -23,7 +23,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 注册桌面小组件 -->
+        </activity>
+
+        <!-- 注册桌面喝水小组件 -->
         <receiver
             android:name=".provider.WaterWidgetProvider"
             android:exported="false">
@@ -34,6 +36,20 @@
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/water_widget_provider_info" />
+        </receiver>
+
+
+        <!-- 注册桌面时钟小组件 -->
+        <receiver
+            android:name=".provider.ClockWidgetProvider"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/clock_widget_provider" />
         </receiver>
     </application>
 

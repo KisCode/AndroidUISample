@@ -18,6 +18,9 @@ import com.kiscode.widget.manager.WatterManager;
 
 /**
  * 喝水小组件.
+ * 主要展示了：
+ * 1. 桌面小组件的添加配置
+ * 2. 小组件点击交互事件(更新组件、打开应用)
  */
 public class WaterWidgetProvider extends AppWidgetProvider {
     private static final String TAG = "WaterWidgetProvider";
